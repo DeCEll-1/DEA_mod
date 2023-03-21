@@ -1,0 +1,11 @@
+{
+  "id": "DEAmod",
+  "name": "DEA",
+  "author": "DeCell#7556",
+  "totalConversion": "false",
+  "version": {"major": 0,"minor": 1,"patch": 0},
+  "description": " 	\"query. query. query target. is omega? omega? no. revert function.\" ",
+  "gameVersion": "0.95.1a-RC6",
+  "jars": ["jars/DEA.jar"]
+
+}

@@ -1,0 +1,101 @@
+{
+  "hullName": "Mountain of Mountains",
+  "hullId": "DEA_04Agri",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/DEA_04Agri.png",
+  "style": "LOW_TECH",
+  "height": 128,
+  "width": 106,
+  "center": [53, 64],
+  "collisionRadius": 103.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 83.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [19, -13]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [19, 13]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HIDDEN",
+      "arc": 40,
+      "angle": 0,
+      "locations": [55, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-64, -35],
+      "length": 38,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-64, 35],
+      "length": 38,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-61, -17.5],
+      "length": 31,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-61, 17.5],
+      "length": 31,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-63, -0],
+      "length": 32,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-63, 0],
+      "length": 32,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -63, 47,
+    36.5, 53,
+    61.5, 29,
+    61.5, -29,
+    36.5, -53,
+    -63, -47
+  ]
+}

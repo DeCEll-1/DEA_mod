@@ -1,0 +1,52 @@
+{
+  "hullName": "Chemical Inbalance",
+  "hullId": "DEA_Storat_Wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/DEA_Storat_Wing.png",
+  "style": "HIGH_TECH",
+  "height": 9,
+  "width": 8,
+  "center": [4, 4.5],
+  "collisionRadius": 34,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 32,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "DEA_LivingMissile_1"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-3, 3.5],
+      "length": 6,
+      "width": 1,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-3, -3.5],
+      "length": 6,
+      "width": 1,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    4, 3.5,
+    -4, 3.5,
+    -4, -3.5,
+    4, -3.5
+  ]
+}

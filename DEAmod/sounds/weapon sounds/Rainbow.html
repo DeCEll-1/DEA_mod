@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rainbow</title>
+</head>
+
+<body>
+    <div>
+        a
+    </div>
+</body>
+<script>
+
+    document.getElementsByTagName("body")[0].style.backgroundColor = "red";
+
+    window.onload = setInterval(Rainbow, 20)
+
+    function Rainbow() {
+        var colorR = parseInt(getComputedStyle(document.getElementsByTagName("body")[0]).getPropertyValue("background-color").replace(/[^\d,]/g, '').split(',')[0]);
+
+        var colorG = parseInt(getComputedStyle(document.getElementsByTagName("body")[0]).getPropertyValue("background-color").replace(/[^\d,]/g, '').split(',')[1]);
+
+        var colorB = parseInt(getComputedStyle(document.getElementsByTagName("body")[0]).getPropertyValue("background-color").replace(/[^\d,]/g, '').split(',')[2]);
+
+        var a = 0;
+
+        var b = 1;
+
+        if (colorR == 0 && colorG == 0 && colorB == 0) {
+            colorR = 255;
+            a = -1;
+        }
+        else if (colorR == 255 && !(colorG >= 255) && colorB == 0) {
+            colorG = colorG + b;
+            a = 1;
+        }
+        else if (colorR <= 255 && colorR != 0 && colorG == 255 && colorB == 0) {
+            colorR = colorR - b;
+            a = 2;
+        }
+        else if (colorR <= 255 && colorG == 255 && colorB >= 0 && colorB < 255) {
+            colorB = colorB + b;
+            a = 3;
+        }
+        if (colorR == 0 && colorG <= 255 && colorG > 0 && colorB == 255) {
+            colorG = colorG - b;
+            a = 4;
+        }
+        else if (colorR < 255 && colorG == 0 && colorB == 255) {
+            colorR = colorR + b;
+            a = 5;
+        }
+        else if (colorR == 255 && colorG == 0 && colorB > 0) {
+            colorB = colorB - b;
+            a = 6;
+        }
+
+        // document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(" + colorR + "," + colorG + "," + colorB + ")";
+
+        var nodeList = document.querySelectorAll("*");
+
+        for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.backgroundColor = "rgb(" + colorR + "," + colorG + "," + colorB + ")";
+        }
+
+        console.log("Renkler: " + colorR + ", " + colorG + ", " + colorB + "\n Hedef rgb: rgb(" + colorR + ", " + colorG + ", " + colorB + ")" + "\n Şuanki if " + a);
+    }
+
+</script>
+
+</html>

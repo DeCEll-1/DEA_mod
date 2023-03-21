@@ -1,0 +1,5 @@
+id,type,text1,text2,text3,text4,notes
+DEA_LivingMissile_1,WEAPON,"""We reverse-engineered some parts of the weapon and found that it fully works on chemical reactions, like an animal. We dont know yet if it feels pain so we locked it in a secure container.""
+""I hope it doesnt reproduce""",,,,
+DEA_Storat,SHIP,"""Wait why some parts of the ship is breaking apart?""
+""Oh no.""",,,,

@@ -1,0 +1,6 @@
+the states of the system
+in = effect level is going up (charge up in the CSV)
+active = effect level is 1 (active in the csv)
+out = effect level going down (down in the csv)
+cooldown = the system is cooling down (cooldown in the csv)
+idle = the system is ready to be used 

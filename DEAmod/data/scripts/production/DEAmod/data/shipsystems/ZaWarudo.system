@@ -1,0 +1,8 @@
+{
+	"id":"DEA_ZaWarudo",
+	"type":"STAT_MOD",
+	"aiType":"TEMPORAL_SHELL",
+
+	
+	"statsScript":"data.shipsystems.scripts.DEA_ZaWarudo"
+}

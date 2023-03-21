@@ -1,0 +1,29 @@
+{
+  "variantId": "DEA_Storat_variant1",
+  "hullId": "DEA_Storat",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 8,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "auxiliarythrusters",
+    "eccm",
+    "extendedshieldemitter",
+    "fluxdistributor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavyblaster",
+        "WS0002": "DEA_LivingMissile_1",
+        "WS0003": "DEA_LivingMissile_1"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

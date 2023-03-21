@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DEA">
+    <output-path>$PROJECT_DIR$/jars</output-path>
+    <root id="archive" name="DEA.jar">
+      <element id="module-output" name="DEA_src" />
+    </root>
+  </artifact>
+</component>

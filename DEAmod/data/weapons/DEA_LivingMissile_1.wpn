@@ -1,0 +1,33 @@
+{
+  "id": "DEA_LivingMissile_1",
+  "specClass": "projectile",
+  "projectileSpecId": "DEA_LivingMissile_1_proj",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/DEA_Living_Missile1_Base.png",
+  "turretGlowSprite": "graphics/weapons/DEA_LivingMissile1_Glow.png",
+  "turretGunSprite": "graphics/weapons/DEA_LivingMissile1_Barrel.png",
+  "hardpointSprite": "graphics/weapons/DEA_Living_Missile1_Base.png",
+  "hardpointGlowSprite": "graphics/weapons/DEA_LivingMissile1_Glow.png",
+  "hardpointGunSprite": "graphics/weapons/DEA_LivingMissile1_Barrel.png",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    7.5,
+    -0.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "fireSoundOne": "DEA_LivingMissile_1_firingSound"
+}

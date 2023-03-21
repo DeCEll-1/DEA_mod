@@ -1,0 +1,107 @@
+{
+  "hullName": "Storat",
+  "hullId": "DEA_Storat",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/DEA_Storat.png",
+  "style": "HIGH_TECH",
+  "height": 72,
+  "width": 72,
+  "center": [36, 36],
+  "collisionRadius": 43.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 36.5,
+  "viewOffset": 0,
+  "builtInWings": [
+    "DEA_Storat_Wing",
+    "DEA_Storat_Wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [14.5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [9, 17]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [9, -17]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -2, -16.5,
+        -3.5, -16.5
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -2, 17,
+        -5, 17
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-22, -0],
+      "length": 30,
+      "width": 25,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14.5, 27.5],
+      "length": 30,
+      "width": 25,
+      "angle": 153.5,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-14.5, -27.5],
+      "length": 30,
+      "width": 25,
+      "angle": -153.5,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    28, -19,
+    14, -29.5,
+    -18.5, -29,
+    -25.5, -10,
+    -25.5, 10,
+    -18.5, 29,
+    14, 29.5,
+    28, 19
+  ]
+}

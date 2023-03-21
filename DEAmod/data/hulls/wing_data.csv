@@ -1,0 +1,3 @@
+id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
+DEA_Storat_Wing,DEA_Storat_Wing_variant1,,13,,30,0,V,2000,700,,1,FIGHTER,Defense Ball,6,795000,,,,,,,,,,,,,2
+#broadsword_wing,broadsword_Fighter,"fighter4, fighter",0,,6,8,V,4000,500,,3,FIGHTER,Heavy Fighter,10,6000,,,,,,,,,,,,,1

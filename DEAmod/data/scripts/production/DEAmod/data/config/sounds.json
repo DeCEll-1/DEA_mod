@@ -1,0 +1,19 @@
+{
+
+#collapseopen MUSIC
+	
+	"music":{
+		####################################
+		# "source" can also be a directory #
+		####################################
+	},
+
+"DEA_LivingMissile_1_firingSound":
+	[
+		{"file":"sounds/weapon sounds/Gawr-Gura-A-sound-effect.ogg","pitch":1.00,"volume":0.3}
+	]
+}
+}
+
+
+
