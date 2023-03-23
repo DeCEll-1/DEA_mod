@@ -1,0 +1,17 @@
+{
+    "id":"DEA_TemporalShield",
+	"type":"SHIELD_MOD",
+	"aiType":"FORTRESS_SHIELD",
+
+	"statsScript":"data.shipsystems.scripts.DEA_TemporalShield",
+    
+	"shieldThicknessMult":1,
+	"shieldFluctuationMult":0,
+
+    "soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.0,
+
+    "loopSound":"system_fortress_shield_loop",
+	"outOfUsesSound":"gun_out_of_ammo"
+}

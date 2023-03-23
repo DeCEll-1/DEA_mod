@@ -1,25 +1,28 @@
 {
-  "hullName": "Brizzard",
+  "hullName": "Blizzard",
   "hullId": "DEA_01Adana",
-  "hullSize": "FRIGATE",
+  "hullSize": "CRUISER",
   "spriteName": "graphics/ships/DEA_01Adana.png",
   "style": "HIGH_TECH",
-  "height": 142,
-  "width": 98,
-  "center": [49, 60],
-  "collisionRadius": 104,
-  "shieldCenter": [0, -0],
-  "shieldRadius": 91.5,
+  "height": 222,
+  "width": 170,
+  "center": [85, 101.5],
+  "collisionRadius": 177.5,
+  "shieldCenter": [-2, -0],
+  "shieldRadius": 133.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "targetingunit"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "ENERGY",
-      "mount": "HARDPOINT",
-      "arc": 40,
+      "mount": "TURRET",
+      "arc": 270,
       "angle": 0,
-      "locations": [76, -0]
+      "locations": [94.5, -0]
     },
     {
       "id": "WS0002",
@@ -28,7 +31,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": -0,
-      "locations": [76, 0]
+      "locations": [94.5, 0]
     },
     {
       "id": "WS0003",
@@ -37,7 +40,7 @@
       "mount": "HARDPOINT",
       "arc": 40,
       "angle": 0,
-      "locations": [50, 37]
+      "locations": [6.5, -64]
     },
     {
       "id": "WS0004",
@@ -46,7 +49,7 @@
       "mount": "HARDPOINT",
       "arc": 40,
       "angle": -0,
-      "locations": [50, -37]
+      "locations": [6.5, 64]
     },
     {
       "id": "WS0005",
@@ -55,7 +58,7 @@
       "mount": "TURRET",
       "arc": 270,
       "angle": -90,
-      "locations": [-41, -34]
+      "locations": [-56.5, -63]
     },
     {
       "id": "WS0006",
@@ -64,49 +67,52 @@
       "mount": "TURRET",
       "arc": 270,
       "angle": 90,
-      "locations": [-41, 34]
+      "locations": [-56.5, 63]
     }
   ],
   "engineSlots": [
     {
-      "location": [-56, -26],
-      "length": 28,
-      "width": 10,
+      "location": [-100.5, -66],
+      "length": 52,
+      "width": 15,
       "angle": 180,
-      "contrailSize": 10,
+      "contrailSize": 15,
       "style": "HIGH_TECH"
     },
     {
-      "location": [-56, 26],
-      "length": 28,
-      "width": 10,
+      "location": [-100.5, 66],
+      "length": 52,
+      "width": 15,
       "angle": -180,
-      "contrailSize": 10,
+      "contrailSize": 15,
       "style": "HIGH_TECH"
     },
     {
-      "location": [-59, -16],
-      "length": 30,
-      "width": 10,
+      "location": [-95.5, -0],
+      "length": 56,
+      "width": 21,
       "angle": 180,
-      "contrailSize": 30,
+      "contrailSize": 21,
       "style": "HIGH_TECH"
     },
     {
-      "location": [-59, 16],
-      "length": 30,
-      "width": 10,
+      "location": [-95.5, 0],
+      "length": 56,
+      "width": 21,
       "angle": -180,
-      "contrailSize": 30,
+      "contrailSize": 21,
       "style": "HIGH_TECH"
     }
   ],
   "bounds": [
-    81.5, 9,
-    55, 49,
-    -55, 49,
-    -55, -49,
-    55, -49,
-    81.5, -9
+    120.5, -0,
+    105, 23,
+    45, 48.5,
+    20.5, 79.5,
+    -100, 83.5,
+    -100, -83.5,
+    20.5, -79.5,
+    45, -48.5,
+    105, -23
   ]
 }

@@ -5,6 +5,7 @@
 
 	
 	"statsScript":"data.shipsystems.scripts.DEA_ZaWarudo",
+	
 	"soundFilterType":"LOWPASS",
 	"soundFilterGain":0.75,
 	"soundFilterGainHF":0.5,
