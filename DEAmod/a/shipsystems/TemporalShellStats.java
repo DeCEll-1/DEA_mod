@@ -79,6 +79,7 @@ public class TemporalShellStats extends BaseShipSystemScript {
 
 		Global.getCombatEngine().getTimeMult().unmodify(id);
 		stats.getTimeMult().unmodify(id);
+
 		
 //		stats.getHullDamageTakenMult().unmodify(id);
 //		stats.getArmorDamageTakenMult().unmodify(id);

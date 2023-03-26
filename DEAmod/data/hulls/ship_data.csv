@@ -1,6 +1,6 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,c/s,c/f,f/s,f/f,crew/s,crew/f,hints,tags,rarity,breakProb,minPieces,maxPieces,travel drive,number
 Storat,DEA_Storat,Shuttle,Staralites,DEA_ZaWarudo,5,1100,200,1800,1000,200,64,2,150,150,90,40,85,80,OMNI,,180,0.7,0.7,,,2,20,30,15,1,15,9,6000,5,20,220,0.25,2,3,,,,,,,,base_bp,,0.75,2,2,,217
-Blizzard,DEA_01Adana,Frigate,Staralites,DEA_TemporalShield,8,4500,700,8000,2813,700,92,,90,100,70,140,270,600,OMNI,,270,0.05,0.65,,,50,80,60,40,2,40,7,36000,7,20,240,0.25,8,8,,,,,,,,rare_bp,,0.5,4,6,,206
+Blizzard,DEA_01Adana,Frigate,Staralites,DEA_TemporalShield,8,4500,700,8000,2813,700,92,,90,100,70,140,270,600,OMNI,,270,0.05,0.65,,,50,80,60,40,2,40,7,36000,7,20,240,0.25,20,8,,,,,,,,rare_bp,,0.5,4,6,,206
 Mountain of Mountains,DEA_04Agri,Freighter,Staralites,burndrive,3,1000,70,700,1167,20,28,,50,25,20,15,7,400,NONE,,,,,,,7,20,300,80,1,40,9,5000,7,7,240,0.25,2,2,133,200,,,,,"CIVILIAN, FREIGHTER","base_bp, merc",1,1,4,6,,304
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chemical Inbalance,DEA_Storat_Wing,,Staralites,,,1500,700,1600,,200,0,,200,400,350,90,180,30,OMNI,,360,4,0.7,,,1,1,,,,,,,,,,,,,,,,,,,,,,0,,,,104

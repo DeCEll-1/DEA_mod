@@ -5,6 +5,8 @@
 
 	"statsScript":"data.shipsystems.scripts.DEA_TemporalShield",
     
+    "shieldRingColor":[255,255,255,255],
+	"shieldInnerColor":[140,140,255,255],
 	"shieldThicknessMult":1,
 	"shieldFluctuationMult":0,
 

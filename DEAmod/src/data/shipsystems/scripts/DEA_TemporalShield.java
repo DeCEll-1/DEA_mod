@@ -11,15 +11,14 @@ import java.awt.*;
 public class DEA_TemporalShield extends BaseShipSystemScript {
     public static float DAMAGE_MULT = 0.9f;
 
-    public static final float MAX_TIME_MULT = 2f;
+    public static final float MAX_TIME_MULT = 3f;
     public static final float MIN_TIME_MULT = 0.1f;
 
-    public static Color shipRingColor;
-
+    //    public static Color shipRingColor;
     public static float shipArc;
 
-    public static final Color JITTER_COLOR = new Color(90, 200, 255, 50);
-    public static final Color JITTER_UNDER_COLOR = new Color(90, 165, 255, 155);
+    public static final Color JITTER_COLOR = new Color(180, 180, 180, 201);
+    public static final Color JITTER_UNDER_COLOR = new Color(98, 98, 98, 155);
 
     public void apply(MutableShipStatsAPI stats, String id, ShipSystemStatsScript.State state, float effectLevel) {
 
@@ -36,16 +35,15 @@ public class DEA_TemporalShield extends BaseShipSystemScript {
             return;
         }
 
-        shipArc = ship.getShield().getArc();
+//        shipArc = ship.getShield().getArc();
 
-        shipRingColor = ship.getShield().getRingColor();
+//        shipRingColor = ship.getShield().getRingColor();
 
-        ship.getShield().setRingColor(new Color(255, 0, 125, 1));
+        stats.getShieldArcBonus().modifyFlat(id, 90f);
 
-        ship.getShield().setArc(360);
         stats.getShieldDamageTakenMult().modifyMult(id, 1f - DAMAGE_MULT * effectLevel);
         stats.getShieldUpkeepMult().modifyMult(id, 0f);
-        stats.getShieldTurnRateMult().modifyMult(id, 1.75f);
+        stats.getShieldTurnRateMult().modifyMult(id, 3f);
         stats.getShieldArcBonus().modifyMult(id, 1f);
         if (ship == Global.getCombatEngine().getPlayerShip()) {
             float shipTimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel;
@@ -103,6 +101,7 @@ public class DEA_TemporalShield extends BaseShipSystemScript {
             return;
         }
         Global.getCombatEngine().getTimeMult().unmodify(id);
+        stats.getTimeMult().unmodify(id);
 
         stats.getShieldArcBonus().unmodify(id);
         stats.getShieldDamageTakenMult().unmodify(id);
@@ -110,8 +109,8 @@ public class DEA_TemporalShield extends BaseShipSystemScript {
         stats.getShieldUnfoldRateMult().unmodify(id);
         stats.getShieldUpkeepMult().unmodify(id);
 
-        ship.getShield().setRingColor(shipRingColor);
-        ship.getShield().setActiveArc(ship.getShield().getArc());
+//        ship.getShield().setRingColor(shipRingColor);
+        stats.getShieldArcBonus().unmodify();
     }
 
     public ShipSystemStatsScript.StatusData getStatusData(int index, ShipSystemStatsScript.State state, float effectLevel) {
