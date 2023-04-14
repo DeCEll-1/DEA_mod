@@ -1,0 +1,17 @@
+{
+	"id":"DEA_FluxConsumer",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+
+	
+	"statsScript":"data.shipsystems.scripts.DEA_FluxConsumer",
+	
+	"canUseWhileRightClickSystemOn":true,
+
+	"fadeActivationSoundOnChargedown":true,
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"burstMovementPotential":0
+	}
+}

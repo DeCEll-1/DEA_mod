@@ -1,0 +1,13 @@
+{
+	"id":"DEA_FoePhaseTeleporter",
+	"type":"STAT_MOD",
+	"aiType":"FORTRESS_SHIELD",
+
+    "statsScript":"data.shipsystems.scripts.DEA_FoePhaseTeleporter",
+
+    "useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	"outOfUsesSound":"gun_out_of_ammo"
+
+}

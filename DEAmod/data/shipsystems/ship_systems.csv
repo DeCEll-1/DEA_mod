@@ -1,9 +1,14 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
 ZAWARUDO,DEA_ZaWarudo,,,,,,0.25,,,,4,10,2,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Temporal Shield,DEA_TemporalShield,,,,,,,,,,2,7,1,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
-Foe Teleporter,DEA_FoePhaseTeleporter,,,,,,0.1,,1,0.1,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
+Flux Redirector,DEA_FluxConsumer,,,,,,,,1,0.01,0.5,0.5,0.5,1,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#Temporal Shell,temporalshell,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
+#REFERANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Mine Strike,mine_strike,,,,,,0.1,,5,0.2,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Temporal Shell,temporalshell,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 #Flare Launcher,flarelauncher,,,,,,,,5,,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png
+#Microburn,microburn_omega,1,,,,,,,3,0.1,0.5,0.5,0.5,,,,,,,,TRUE,TRUE,,,,restricted,graphics/icons/hullsys/burn_drive.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#UNUSED,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Foe Teleporter,DEA_FoePhaseTeleporter,,,,,,0.1,,1,0.1,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
