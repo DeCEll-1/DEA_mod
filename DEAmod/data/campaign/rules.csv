@@ -1,1 +1,6 @@
 id,trigger,conditions,script,text,options,notes
+"#RULESET_NAME DEA willthefunperson0868 is based",,,,,,
+DEA_KarabasanHullmodOmegaSalvage,BeatDefendersContinue,"$tag:coronal_tap==true score:2000","FireBest OpenInteractionDialog
+ DEA_KarabasanHullmodOmegaSalvage","placeholder","1:yourOption:Continue",
+NEW RULE,,,,,,
+

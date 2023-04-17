@@ -1,0 +1,30 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+Reaper Torpedo Modifier,DEA_KarabasanReaperModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanReaperModification,"Changes Karabasans hammer into Reaper Torpedos
+
+Takes 60 seconds to reload one missile",Changes Karabasans hammer into Reaper Torpedos,graphics/icons/hullmods/Test_Image.png
+Sabot Missile Modifier,DEA_KarabasanSabotModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanSabotModification,"Changes Karabasans hammer into Sabots
+
+Takes 30 seconds to reload one missile",Changes Karabasans hammer into Sabots,graphics/icons/hullmods/Test_Image.png
+Atropos Missile Modifier,DEA_KarabasanAtroposModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanAtroposModification,"Changes Karabasans hammer into Atroposes
+
+Takes 20 seconds to reload one missile",Changes Karabasans hammer into Atroposes,graphics/icons/hullmods/Test_Image.png
+Proximity Missile Modifier,DEA_KarabasanProximyModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanProximyModification,"Changes Karabasans hammer into Proximity Mines
+
+Takes 2.5 seconds to reload one ammo",Changes Karabasans hammer into Proximity Ammos,graphics/icons/hullmods/Test_Image.png
+Harpoon Missile Modifier,DEA_KarabasanHarpoonModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanHarpoonModification,"Changes Karabasans hammer into Harpoons
+
+Takes 40 seconds to reload one burst",Changes Karabasans hammer into Harpoons,graphics/icons/hullmods/Test_Image.png
+AMSRM Missile Modifier,DEA_KarabasanAMSRMModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanAMSRMModification,"Changes Karabasans hammer into AMSRM missiles
+
+Takes 10 seconds to reload one missile",Changes Karabasans hammer into AMSRM missiles,graphics/icons/hullmods/Test_Image.png
+Resonator Missile Modifier,DEA_KarabasanResonatorModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanResonatorModification,"Changes Karabasans hammer into Resonators
+
+Takes 10 seconds to reload one burst",Changes Karabasans hammer into Resonators,graphics/icons/hullmods/Test_Image.png
+Rift Torpedo Modifier,DEA_KarabasanRiftModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanRiftModification,"Changes Karabasans hammer into Rift Torpedos
+
+Takes 40 seconds to reload one torpedo",Changes Karabasans hammer into Rift Torpedos,graphics/icons/hullmods/Test_Image.png
+Karabasan Hidden Hullmod,DEA_KarabasanHiddenHullmod,,,Staralites,offensive,Karabasan,0,,,TRUE,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanHiddenHullmod,Karabasan Hidden Hullmod,Karabasan Hidden Hullmod,graphics/icons/hullmods/Test_Image.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

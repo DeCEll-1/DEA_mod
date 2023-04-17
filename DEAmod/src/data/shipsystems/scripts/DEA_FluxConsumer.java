@@ -28,8 +28,6 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
 
         ShipAPI ship = null;
 
-        boolean player = false;
-
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
 //            if (ship == Global.getCombatEngine().getPlayerShip()) {
@@ -38,7 +36,7 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
 //                        id,
 //                        "graphics/icons/hullmods/Test_Image.png",
 //                        "Debug number:",
-//                        Float.toString(speed),
+//                        Float.toString(EffectLevel),
 //                        false
 //                        );
 //            }
@@ -48,7 +46,7 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
 
         if (state == State.IN) {
             speed = (ship.getFluxTracker().getCurrFlux() - ship.getFluxTracker().getHardFlux()) * Global.getCombatEngine().getElapsedInLastFrame() * 2;
-            ship.getSpriteAPI().getColor();
+            ShipColor = ship.getSpriteAPI().getColor();
         }
 
         if (state == State.ACTIVE) {
@@ -75,11 +73,11 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
                 Global.getCombatEngine().addSmokeParticle(ship.getLocation(), ship.getVelocity(), ship.getSpriteAPI().getHeight(), 255f, 3, new Color(180, 100, 255, 220));
             }
 
-            ship.getSpriteAPI().setColor(new Color(148, 111, 183, 120));
-
-
         }
 
+        if (state == State.OUT) {
+            ship.getSpriteAPI().setColor(ShipColor);
+        }
 
     }
 
@@ -105,7 +103,6 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
     //from tomato for making it only useable while phasing
     @Override
     public boolean isUsable(ShipSystemAPI system, ShipAPI ship) {
-
         if (ship != null && ship.isAlive() && ship.isPhased() && (ship.getFluxTracker().getCurrFlux() - ship.getFluxTracker().getHardFlux()) != 0) {
             return true;
         }

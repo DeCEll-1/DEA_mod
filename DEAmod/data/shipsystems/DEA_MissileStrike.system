@@ -1,9 +1,9 @@
 {
-	"id":"mine_strike",
+	"id":"DEA_MissileStrike",
 	"type":"STAT_MOD",
 	"aiType":"MINE_STRIKE",
 	
-	"statsScript":"com.fs.starfarer.api.impl.combat.MineStrikeStats",
+	"statsScript":"data.shipsystems.scripts.DEA_MissileStrike",
 
 	"canUseWhileRightClickSystemOn":true,
 

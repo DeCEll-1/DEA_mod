@@ -1,0 +1,169 @@
+{
+  "hullName": "Karabasan",
+  "hullId": "DEA_Karabasan",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/Phase/DEA_Karabasan.png",
+  "style": "HIGH_TECH",
+  "height": 171,
+  "width": 224,
+  "center": [112, 85.5],
+  "collisionRadius": 161.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 144,
+  "viewOffset": 0,
+  "builtInMods": [
+    "delicate",
+    "phasefield",
+    "DEA_KarabasanHiddenHullmod"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [35.5, -74]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": -0,
+      "locations": [35.5, 74]
+    },
+    {
+      "id": "WS0003t",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [58.5, -42]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": -0,
+      "locations": [58.5, 42]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 270,
+      "angle": 0,
+      "locations": [-33.5, -79]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 270,
+      "angle": -0,
+      "locations": [-33.5, 79]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [2.5, -77]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -0,
+      "locations": [2.5, 77]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-80.5, -31],
+      "length": 30,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-80.5, 31],
+      "length": 30,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-82.5, 11.5],
+      "length": 60,
+      "width": 21,
+      "angle": -180,
+      "contrailSize": 22,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-82.5, -11.5],
+      "length": 60,
+      "width": 21,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, -69],
+      "length": 34.349258,
+      "width": 16.171394,
+      "angle": -170.5,
+      "contrailSize": 16.171394,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, 69],
+      "length": 34.349258,
+      "width": 16.171394,
+      "angle": 170.5,
+      "contrailSize": 16.171394,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, -85.5],
+      "length": 46.872845,
+      "width": 14.891129,
+      "angle": -163,
+      "contrailSize": 14.891129,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, 85.5],
+      "length": 46.872845,
+      "width": 14.891129,
+      "angle": 163,
+      "contrailSize": 14.891129,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -84.5, 100,
+    -66, 112.5,
+    51.5, 78,
+    84, 18,
+    84, -18,
+    51.5, -78,
+    -66, -112.5,
+    -84.5, -100
+  ]
+}

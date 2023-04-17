@@ -2,6 +2,7 @@ name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u 
 ZAWARUDO,DEA_ZaWarudo,,,,,,0.25,,,,4,10,2,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Temporal Shield,DEA_TemporalShield,,,,,,,,,,2,7,1,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Flux Redirector,DEA_FluxConsumer,,,,,,,,1,0.01,0.5,0.5,0.5,1,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
+Missile Teleporter,DEA_MissileStrike,,,,,,0.1,,5,0,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #REFERANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
