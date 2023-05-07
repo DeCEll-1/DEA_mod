@@ -31,10 +31,6 @@ public class DEA_KarabasanHullmodOmegaSalvage implements CommandPlugin {
     public void DEA_AddKarabasanHullmods() {
     }
 
-    public DEA_KarabasanHullmodOmegaSalvage(SectorEntityToken entity) {
-        init(entity);
-    }
-
     protected void init(SectorEntityToken entity) {
         memory = entity.getMemoryWithoutUpdate();
         this.entity = entity;
@@ -48,25 +44,10 @@ public class DEA_KarabasanHullmodOmegaSalvage implements CommandPlugin {
 
     @Override
     public boolean execute(String ruleid, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
-        this.dialog = dialog;
-        this.memoryMap = memoryMap;
-
-        String command = params.get(0).getString(memoryMap);
-        if (command == null) return false;
-
-        entity = dialog.getInteractionTarget();
-        init(entity);
-
-        text = dialog.getTextPanel();
-        options = dialog.getOptionPanel();
-
-        if (command.equals("DEA_Add_KarabasanHullmodOmegaSalvage")) {
-            CargoAPI cargo = Global.getSector().getPlayerFleet().getCargo();
-            cargo.addHullmods("DEA_KarabasanAMSRMModification", 1);
-            cargo.addHullmods("DEA_KarabasanResonatorModification", 1);
-            cargo.addHullmods("DEA_KarabasanRiftModification", 1);
-        }
-
+        CargoAPI cargo = Global.getSector().getPlayerFleet().getCargo();
+        cargo.addHullmods("DEA_KarabasanAMSRMModification", 1);
+        cargo.addHullmods("DEA_KarabasanResonatorModification", 1);
+        cargo.addHullmods("DEA_KarabasanRiftModification", 1);
         return true;
     }
 
