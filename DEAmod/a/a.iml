@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/ShipSystemsReferance" isTestSource="false" packagePrefix="com.fs.starfarer.api.impl.combat" />
+      <sourceFolder url="file://$MODULE_DIR$/shipsystems" isTestSource="false" packagePrefix="data.shipsystems.scripts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

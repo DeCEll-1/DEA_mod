@@ -19,7 +19,7 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
 
     public static float speed;
 
-    public static Color ShipColor;
+//    public static Color ShipColor;
 
     //from tomato
     private final IntervalUtil interval = new IntervalUtil(0.5f, 0.5f); // chooses a random interval between 0.1 and 0.5 seconds
@@ -46,7 +46,7 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
 
         if (state == State.IN) {
             speed = (ship.getFluxTracker().getCurrFlux() - ship.getFluxTracker().getHardFlux()) * Global.getCombatEngine().getElapsedInLastFrame() * 2;
-            ShipColor = ship.getSpriteAPI().getColor();
+//            ShipColor = ship.getSpriteAPI().getColor();
         }
 
         if (state == State.ACTIVE) {
@@ -74,10 +74,10 @@ public class DEA_FluxConsumer extends BaseShipSystemScript {
             }
 
         }
-
-        if (state == State.OUT) {
-            ship.getSpriteAPI().setColor(ShipColor);
-        }
+//
+//        if (state == State.OUT) {
+//            ship.getSpriteAPI().setColor(ShipColor);
+//        }
 
     }
 

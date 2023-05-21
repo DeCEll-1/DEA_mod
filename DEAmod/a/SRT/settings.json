@@ -1,7 +1,9 @@
 {
   "activeRulesets": [
-    "Vanilla.csv"
+    "Vanilla.csv",
+    "C:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\DEAmod\\data\\campaign\\rules.csv"
   ],
+  "modsLocation": "C:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods",
   "safeMode": false,
   "language": "en"
 }

@@ -1,0 +1,22 @@
+{
+	"id":"DEA_ShipTimeManipulator",
+	"type":"STAT_MOD",
+	"aiType":"ENTROPY_AMPLIFIER",
+	
+	"statsScript":"data.shipsystems.scripts.DEA_ShipTimeManipulator",
+
+	"runScriptWhileIdle":true,
+		
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+
