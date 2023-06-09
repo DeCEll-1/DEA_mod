@@ -1,0 +1,41 @@
+{
+  "id": "DEA_FusionBeam",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  
+	"beamEffect":"data.weapons.effects.DEA_FusionBeam_Effect",
+
+  "turretSprite": "graphics/DEA_Sting.png",
+  "turretGlowSprite": "graphics/DEA_Sting.png",
+  "turretGunSprite": "graphics/DEA_Sting.png",
+  "hardpointSprite": "graphics/DEA_Sting.png",
+  "hardpointGlowSprite": "graphics/DEA_Sting.png",
+  "hardpointGunSprite": "graphics/DEA_Sting.png",
+  
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+
+	"fringeColor":[85,25,215,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[165,100,255,235],
+  "darkCore":false,
+
+	"width":25.0,
+	"textureType":ROUGH,
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "fireSoundOne": "DEA_LivingMissile_1_firingSound"
+}

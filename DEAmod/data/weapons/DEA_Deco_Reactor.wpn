@@ -1,0 +1,30 @@
+{
+  "id": "DEA_Deco_Reactor",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+
+  "everyFrameEffect":"data.weapons.DEA_Deco_Reactor",
+  
+  "turretSprite": "graphics/DEA_Error_Image.png",
+  "turretGlowSprite": "graphics/DEA_Error_Image.png",
+  "turretGunSprite": "graphics/DEA_Error_Image.png",
+  "hardpointSprite": "graphics/DEA_Sting.png",
+  "hardpointGlowSprite": "graphics/DEA_Sting.png",
+  "hardpointGunSprite": "graphics/DEA_Error_Image.png",
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "textureType": ROUGH
+}

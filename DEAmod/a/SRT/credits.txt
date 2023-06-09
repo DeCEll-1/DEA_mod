@@ -1,6 +1,0 @@
-Credits
-	Programming: SafariJohn
-	Icon: Gwyvern
-	Sanity Check: MesoTroniK
-	Beta Testing: MesoTroniK, Deathfly, Tartiflette, Histidine
-	Linux Compatibility: Armithaig, MShadowy
