@@ -24,7 +24,7 @@ public class DEA_Logger {
      */
     public static boolean DEA_log(Class myClass, String val1, String val2) {
         try {
-            Global.getLogger(myClass).info(val1);
+            Global.getLogger(myClass).info(val1+val2);
             return true;
         } catch (Exception ex) {
             return false;

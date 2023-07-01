@@ -29,5 +29,5 @@
   ],
   "barrelMode": "ALTERNATING",
   "animationType": "NONE",
-  "fireSoundOne": "DEA_LivingMissile_1_firingSound"
+  "fireSoundOne": "GawrGuraASoundEffect"
 }

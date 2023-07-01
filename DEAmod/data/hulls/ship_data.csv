@@ -4,7 +4,7 @@ Blizzard,DEA_01Adana,Frigate,Staralites,DEA_TemporalShield,8,4500,700,8000,2813,
 Mountain of Mountains,DEA_04Agri,Freighter,Staralites,burndrive,3,1000,70,700,1167,20,28,,50,25,20,15,7,400,NONE,,,,,,,7,20,300,80,1,40,9,5000,7,7,240,0.25,2,2,133,200,,,,,"CIVILIAN, FREIGHTER","base_bp, merc",,1,4,6,,304
 Bulut,DEA_Bulut,Battleship,Staralites,DEA_FluxConsumer,40,16000,1300,19000,4624,1000,256,,50,25,17,15,7,4000,PHASE,phasecloak,,,,0.02,0.02,400,600,250,600,10,60,7,600000,4,30,650,0.25,65,65,,,,,,,,"rare_bp, hist3t, merc",,0.4,2,4,,2786
 Karabasan,DEA_Karabasan,Cruisader,Staralites,DEA_MissileStrike,30,8000,1250,10000,18000,900,126,,75,55,40,20,25,1200,PHASE,phasecloak,,,,0.05,0.05,50,100,120,150,3,50,8,250000,4,20,420,0.25,35,35,,,,,,,,"rare_bo, hist2t, merc",,0.5,2,3,,500
-Penteract,DEA_Hopelesness,Penteract,Unknown,,120,20000,1700,20000,26000,2000,515,,30,10,5,30,20,5000,OMNI,,284,0,0.5,,,0,0,200,300,3,100,8,2500000,20,5,,,70,70,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX","omega, no_autofit, restricted",,0.5,2,3,,462
+Penteract,DEA_Hopelesness,Penteract,Unknown,DEA_PenteractSystem,120,20000,1700,20000,26000,7000,645,,30,10,5,30,20,5000,OMNI,,284,0,0.5,,,0,0,200,300,3,100,8,2500000,20,5,,,70,70,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX","omega, no_autofit, restricted",,0.5,2,3,,462
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chemical Inbalance,DEA_Storat_Wing,,Staralites,,,1500,700,1600,,200,0,,200,400,350,90,180,30,OMNI,,360,4,0.7,,,1,1,,,,,,,,,,,,,,,,,,,,,,0,,,,104
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

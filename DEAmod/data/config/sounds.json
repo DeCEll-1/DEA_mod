@@ -8,8 +8,14 @@
 		####################################
 	},
 
-"DEA_LivingMissile_1_firingSound":
+"GawrGuraASoundEffect":
 	[
 		{"file":"sounds/weapon sounds/Gawr-Gura-A-sound-effect.ogg","pitch":1.00,"volume":0.3}
+	],
+	
+
+"DEA_JustKillYourself":
+	[
+		{"file":"sounds/weapon sounds/DEA_JustKillYourself.ogg","pitch":1.00,"volume":0.3}
 	]
 }

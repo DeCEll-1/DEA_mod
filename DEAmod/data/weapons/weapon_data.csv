@@ -4,7 +4,7 @@ name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn r
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #BUİLT-İN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-DEA_FusionBeam,DEA_FusionBeam,,,,5000,7000,,1500,0,7,0,,,,ENERGY,,9500,0.5,0.5,1,4,,,,,10000,,,,,,,,LR,,Unknown,,Death,s,s,s,s,omagad no waaaaeeey,s,s,s,s,2
+DEA_FusionBeam,DEA_FusionBeam,,,,5000,1000,,9000,0,35,0,,,,ENERGY,,9500,1,0,1,6,,,,,999999,,,,,,,,LR,,Unknown,,Death,s,s,s,s,omagad no waaaaeeey,s,s,s,s,2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #DECORATİON,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

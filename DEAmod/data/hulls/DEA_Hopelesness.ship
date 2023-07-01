@@ -13,7 +13,9 @@
   "viewOffset": 0,
   "builtInMods": [
     "automated",
-    "shard_spawner"
+    "shard_spawner",
+    "DEA_100CR",
+    "DEA_NoWeaponDisabling"
   ],
   "builtInWeapons": {
     "FusionDeco": "DEA_Deco_Reactor",
@@ -469,15 +471,6 @@
       "arc": 360,
       "angle": 0,
       "locations": [66.5, 113]
-    },
-    {
-      "id": "WS0051",
-      "size": "SMALL",
-      "type": "UNIVERSAL",
-      "mount": "TURRET",
-      "arc": 205,
-      "angle": 16,
-      "locations": [66.5, -113]
     },
     {
       "id": "WS0050",

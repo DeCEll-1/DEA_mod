@@ -1,0 +1,21 @@
+{
+	"id":"DEA_PenteractSystem",
+	"type":"STAT_MOD",
+	"aiType":"TEMPORAL_SHELL",
+	
+	"statsScript":"data.shipsystems.scripts.DEA_PenteractSystem",
+
+	"range":500,
+
+	"runScriptWhileIdle":true,
+		
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	
+}
+
+
+
+

@@ -1,4 +1,7 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+,,,,,,,,,,,,,,,,,,
+#KARABASAN,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
 Reaper Torpedo Modifier,DEA_KarabasanReaperModification,,,Staralites,offensive,Karabasan,40000,,,,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanReaperModification,"Changes Karabasans hammer into Reaper Torpedos
 
 Takes 60 seconds to reload one missile",Changes Karabasans hammer into Reaper Torpedos,graphics/icons/hullmods/Test_Image.png
@@ -25,6 +28,9 @@ Rift Torpedo Modifier,DEA_KarabasanRiftModification,,,Staralites,offensive,Karab
 Takes 40 seconds to reload one torpedo",Changes Karabasans hammer into Rift Torpedos,graphics/icons/hullmods/Test_Image.png
 Karabasan Hidden Hullmod,DEA_KarabasanHiddenHullmod,,,Staralites,offensive,Karabasan,0,,,TRUE,0,0,0,0,data.hullmods.Karabasan.DEA_KarabasanHiddenHullmod,Karabasan Hidden Hullmod,Karabasan Hidden Hullmod,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,
+#HİDDEN HULLMODS,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
+max cr,DEA_100CR,,,AAAAAAA,,,0,,,TRUE,0,0,0,0,data.hullmods.DEA_100CR,100% cr,100% cr,graphics/icons/hullmods/Test_Image.png
+repair weapons,DEA_NoWeaponDisabling,,,AAAAAAA,,,0,,,TRUE,0,0,0,0,data.hullmods.DEA_NoWeaponDisabling,no weapon disabling,no weapon disabling,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,

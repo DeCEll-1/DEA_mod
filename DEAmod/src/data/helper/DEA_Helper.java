@@ -15,6 +15,7 @@ import org.lwjgl.util.vector.Vector4f;
 import org.magiclib.plugins.MagicFakeBeamPlugin;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import org.magiclib.util.MagicFakeBeam;
+import org.magiclib.util.MagicRender;
 import org.w3c.dom.ranges.Range;
 
 import java.awt.*;
@@ -73,6 +74,32 @@ public class DEA_Helper {
         return MathUtils.getPointOnCircumference(beam.getWeapon().getLocation(), beam.getLength(), beam.getWeapon().getCurrAngle());
     }
 
+
+    /**
+     * keeps the angle between 0 and 360<br/>
+     * like 340 + 60 = 400 but this will make it 40 <br/>
+     *
+     * @param angle     base angle
+     * @param PlusMinus how much you want to increase/decrease the angle
+     * @return if the proccess completed successfully returns true, false othervise. so instead of crashing it just, doesnt work
+     */
+    public static float DEA_GetPlusMinusAngle(float angle, float PlusMinus) {
+        try {
+
+            if (angle + PlusMinus < 360 && angle + PlusMinus > 0) return angle + PlusMinus;
+
+            if (angle + PlusMinus > 360) return (angle + PlusMinus) - 360f;
+
+            if (angle + PlusMinus < 0) return (angle + PlusMinus) + 360f;
+
+
+
+
+            return 0f;
+        } catch (Exception ex) {
+            return 0f;
+        }
+    }
 
 
 }

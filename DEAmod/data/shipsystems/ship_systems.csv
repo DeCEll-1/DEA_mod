@@ -4,9 +4,11 @@ Temporal Shield,DEA_TemporalShield,,,,,,,,,,2,7,1,10,,,,TRUE,,,,,,,,,graphics/ic
 Flux Redirector,DEA_FluxConsumer,,,,,,,,1,0.01,0.5,0.5,0.5,1,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Missile Teleporter,DEA_MissileStrike,,,,,,0.1,,5,0,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Wireless Time Manipulator,DEA_ShipTimeManipulator,,,,,,0.1,,,,4,10,2,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
+OverDrive,DEA_PenteractSystem,1,,,,,0.1,,,,0.5,4,0.5,3,,,,,TRUE,,,,,,,,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #REFERANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#EMP Emitter,emp,1,,,,,0.2,,,,0.5,4,0.5,3,,,,,TRUE,,,,,,,,graphics/icons/hullsys/emp_emitter.png
 #Mine Strike,mine_strike,,,,,,0.1,,5,0.2,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
 #Temporal Shell,temporalshell,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 #Flare Launcher,flarelauncher,,,,,,,,5,,,,,5,,,,,,,,,,,,,graphics/icons/hullsys/flare_launcher.png

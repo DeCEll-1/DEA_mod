@@ -2,15 +2,19 @@ package data.helper;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
+import com.fs.starfarer.combat.entities.Ship;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;
 import org.lwjgl.util.vector.Vector2f;
 import data.helper.DEA_Helper;
+import org.magiclib.util.MagicFakeBeam;
 
 import java.util.Map;
 
 import static data.helper.DEA_BoundsHelper.DEA_GetRandomBoundLocation;
+import static data.helper.DEA_Statics.transparent;
 
 public class DEA_EMPArcHelper {
 
@@ -35,7 +39,6 @@ public class DEA_EMPArcHelper {
                     fringe,
                     core
             );
-            CombatEntityAPI s = new SimpleEntity(from);
             return true;
         } catch (Exception ex) {
             return false;
@@ -49,9 +52,7 @@ public class DEA_EMPArcHelper {
      * @param DamageSource    the damages source, ShipAPI
      * @param from            the arcs source location
      * @param target          target entitty
-     * @param DamageType      damage type
-     * @param DamageAmount    damage amount
-     * @param EMPDamageAmount emp damage amount
+     * @param DamageBaseClass DamageBaseClass only need damage type emp and damage
      * @param range           range of the arc
      * @param ImpactSoundID   id of the sound when the arc hits
      * @param thiccness       thiccness of the arc
@@ -59,7 +60,7 @@ public class DEA_EMPArcHelper {
      * @param core            core color
      * @return if the proccess completed successfully returns true, false othervise. so instead of crashing it just, doesnt work
      */
-    public static boolean DEA_SpawnDamagingEMPArc(ShipAPI DamageSource, Vector2f from, CombatEntityAPI target, DamageType DamageType, float DamageAmount, float EMPDamageAmount, float range, String ImpactSoundID, float thiccness, java.awt.Color fringe, java.awt.Color core) {
+    public static boolean DEA_SpawnDamagingEMPArc(ShipAPI DamageSource, Vector2f from, CombatEntityAPI target, DEA_DamageBaseClass DamageBaseClass, float range, String ImpactSoundID, float thiccness, java.awt.Color fringe, java.awt.Color core) {
 
         try {
             Global.getCombatEngine().spawnEmpArc(
@@ -67,9 +68,9 @@ public class DEA_EMPArcHelper {
                     from,
                     DEA_CombatEntityAPIForEMPArcVisaul(from),
                     target,
-                    DamageType,
-                    DamageAmount,
-                    EMPDamageAmount,
+                    DamageBaseClass.DamageType,
+                    DamageBaseClass.Damage,
+                    DamageBaseClass.EMPDamage,
                     range,
                     ImpactSoundID,
                     thiccness,
@@ -274,43 +275,85 @@ public class DEA_EMPArcHelper {
      * spawns damaging arc </br>
      * DONT PLAY WİTH THİS İT GİVES WEİRD ASS ERRORS THAT İ DONT KNOW HOW TO SOLVE</br>
      *
-     * @param from            from
-     * @param angle           angle
-     * @param lenght          lenght of the line
-     * @param thiccness       thiccness of the arc
-     * @param space           space between arcs
-     * @param target          targeted enemy, can be null but wont do damage so just use DEA_SpawnEMPArcLineVisual for effects
-     * @param DamageSource    the damages source, ShipAPI
-     * @param DamageType      damage type
-     * @param DamageAmount    damage amount
-     * @param EMPDamageAmount emp damage amount
-     * @param fringe          fringe color
-     * @param core            core color
+     * @param from       from
+     * @param angle      angle
+     * @param lenght     lenght of the line
+     * @param thiccness  thiccness of the arc
+     * @param space      space between arcs
+     * @param DamageInfo DEA_DamageBaseClass only need explosion spec
+     * @param source     the damages source, ShipAPI
+     * @param fringe     fringe color
+     * @param core       core color
      * @return if the proccess completed successfully returns true, false othervise. so instead of crashing it just, doesnt work
      */
-    public static boolean DEA_SpawnEMPArcLineDamaging(Vector2f from, float angle, int lenght, float thiccness, float space, CombatEntityAPI target, ShipAPI DamageSource, DamageType DamageType, float DamageAmount, float EMPDamageAmount, String ImpactSoundID, java.awt.Color fringe, java.awt.Color core) {
+    public static boolean DEA_SpawnEMPArcLineDamaging(Vector2f from, float angle, int lenght, float thiccness, float space, DEA_DamageBaseClass DamageInfo, ShipAPI source, java.awt.Color fringe, java.awt.Color core) {
         try {
             Vector2f to = new Vector2f();
 
-            for (int i = 0; i < lenght; i++) {
+            for (int i = 0; i < lenght / space; i++) {
+
+                boolean IsNearSomething = false;
+
                 if (i % 2 == 0) {
                     to = MathUtils.getPointOnCircumference(from, space, angle);
-                    if (CombatUtils.getEntitiesWithinRange(to, space) != null) {
+                    DEA_SpawnEMPArcVisual(from, to, thiccness, fringe, core);
 
-                        if (DEA_SpawnDamagingEMPArc(DamageSource, from, target, DamageType, DamageAmount, EMPDamageAmount, space, ImpactSoundID, thiccness, fringe, core)) {
+                    for (CombatEntityAPI s : CombatUtils.getEntitiesWithinRange(to, space)) {//those are for checking if they are near anything but it lags more than without it rn so
+                        if (s instanceof ShipAPI) {
+                            IsNearSomething = true;
+                            break;
                         }
+                    }
 
-                    } else {
-                        DEA_SpawnEMPArcVisual(from, to, thiccness, fringe, core);
+                    if (IsNearSomething) {
+//                    MagicFakeBeam.spawnFakeBeam(
+//                            Global.getCombatEngine(),
+//                            to,
+//                            50f,
+//                            0f,
+//                            5f,
+//                            1f,
+//                            1f,
+//                            5f,
+//                            transparent,
+//                            transparent,
+//                            DamageInfo.Damage,
+//                            DamageInfo.DamageType,
+//                            DamageInfo.EMPDamage,
+//                            source
+//                    );
+                        Global.getCombatEngine().spawnDamagingExplosion(DamageInfo.DamagingExplosionSpec, source, to, false);
                     }
                 } else {
                     from = MathUtils.getPointOnCircumference(to, space, angle);
-
-                    if (CombatUtils.getEntitiesWithinRange(from, space) != null) {
-                        if (DEA_SpawnDamagingEMPArc(DamageSource, to, target, DamageType, DamageAmount, EMPDamageAmount, space, ImpactSoundID, thiccness, fringe, core)) {
+                    DEA_SpawnEMPArcVisual(to, from, thiccness, fringe, core);
+                    for (CombatEntityAPI s : CombatUtils.getEntitiesWithinRange(from, space)) {
+                        if (s instanceof ShipAPI) {
+                            IsNearSomething = true;
+                            break;
                         }
-                    } else {
-                        DEA_SpawnEMPArcVisual(to, from, thiccness, fringe, core);
+                    }
+
+                    if (IsNearSomething) {
+//                    MagicFakeBeam.spawnFakeBeam(
+//                            Global.getCombatEngine(),
+//                            from,
+//                            1f,
+//                            0f,
+//                            1f,
+//                            1f,
+//                            1f,
+//                            1f,
+//                            transparent,
+//                            transparent,
+//                            DamageInfo.Damage,
+//                            DamageInfo.DamageType,
+//                            DamageInfo.EMPDamage,
+//                            source
+//                    );
+
+                        Global.getCombatEngine().spawnDamagingExplosion(DamageInfo.DamagingExplosionSpec, source, from, false);
+
                     }
                 }
             }
