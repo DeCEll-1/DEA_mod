@@ -1,0 +1,20 @@
+@Override
+public void renderInWorldCoords (ViewportAPI viewport) { CombatEngineAPI engine Global.getCombatEngine();
+if(engine == null) return;
+ShipAPI playership engine, getPlayership();
+if(playerSnip == null) return;
+Vector2f fromPoint = MathUtils.getPointOnCircumference (playership.getLocation(), radius: 1000f, angle playership.getFacing() + 45+);
+Vector2f toPoint = MathUtils.getPointOnCircumference (playership.getLocation(), radius: 1808f, angle playership.getFacing() - 454);
+Float angle = VectorUtils.getAngle(fromPoint, topoint);
+float width = 50f;
+Vector2f A = MathUtils.getPointOnCircumference (fromPoint, adik width/2, angle angle 90);
+Vector2f = MathUtils.getPointOnCircumference (fromPoint, salato/2, angle angle-90); Vector2f C = MathUtils.getPointOnCircumference (toPoint, radius width/2, angle: angle+90);
+Vector2fp = MathUtils.getPointoncircumference (toPaint, radius 10th/2 angle angle-90);
+GL11.glDisable (GL11.GL_TEXTURE_20);
+GL11.glBegin(GL11.6L TRIANGLE STRIP); GL11.glColor4f1f, green 1f, blue 1f, alpha 1f);
+GL11.glVertex2f(A.x, A.y);
+GL11.glVertex2f(8.x, B.y);
+GL11.glVertex2f(C.x, C.y);
+GL11.glVertex2f(0.x, D.y);
+GL11.glEnd();
+GL11.glEnable(GL11.GL_TEXTURE_20);

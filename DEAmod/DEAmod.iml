@@ -12,5 +12,6 @@
     <orderEntry type="library" name="commons-compiler-jdk" level="project" />
     <orderEntry type="library" name="CMUtils" level="project" />
     <orderEntry type="library" exported="" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="DEAlib" level="project" />
   </component>
 </module>

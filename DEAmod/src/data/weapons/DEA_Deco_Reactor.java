@@ -1,9 +1,13 @@
 package data.weapons;
 
+import DEA.helper.DEAlib_DamageBaseClass;
+import DEA.helper.DEAlib_EMPArcHelper;
+import DEA.helper.render.DEAlib_RendererPlugin;
+import DEA.helper.render.renderClassesFolder.DEAlib_LineData;
+import DEA.helper.render.renderClassesFolder.DEAlib_PolygonWHeightAndCenterData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
-import data.helper.*;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
@@ -11,11 +15,13 @@ import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicFakeBeam;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-import static data.helper.DEA_Helper.DEA_Rainbow;
-import static data.helper.DEA_Statics.random;
-import static data.helper.DEA_EMPArcHelper.DEA_SpawnDamagingEMPArc;
+import static DEA.helper.DEAlib_Helper.DEA_Rainbow;
+import static DEA.helper.DEAlib_Statics.random;
+import static DEA.helper.DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc;
 
 
 public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
@@ -23,7 +29,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     public static Vector2f from;
 
-    public static DEA_DamageBaseClass DEA_Penteract_DamageBaseClass = new DEA_DamageBaseClass();
+    public static DEAlib_DamageBaseClass DEA_Penteract_DamageBaseClass = new DEAlib_DamageBaseClass();
 
     public boolean runOnce = true;
 
@@ -34,8 +40,17 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     public IntervalUtil timer = new IntervalUtil(1f, 1f);
 
+    private DEAlib_RendererPlugin plugin = null;
+
+
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         try {
+
+            if (plugin == null) {
+                plugin = new DEAlib_RendererPlugin();
+                Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
+            }
+
             if (runOnce) {
                 DEA_Penteract_DamageBaseClass.DamageType = DamageType.ENERGY;
                 DEA_Penteract_DamageBaseClass.Damage = 20f;
@@ -44,16 +59,23 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
                 this.shipColor = weapon.getShip().getSpriteAPI().getAverageColor();
             }
 
+            List<DEAlib_LineData> dealib_lineDataList = new ArrayList<>();
 
             timer.advance(amount);
-            for (int i = 0; i < 200; i++) {
-                float BeamAngle = (float) random.nextInt(360);
-                from = MathUtils.getPointOnCircumference(weapon.getLocation(), (float) random.nextInt(29), BeamAngle);
-                MakeParticle(amount, engine, weapon, from, BeamAngle);
+            if (!engine.isPaused()) {
+                for (int i = 0; i < 200; i++) {
+                    float BeamAngle = (float) random.nextInt(360);
+                    from = MathUtils.getPointOnCircumference(weapon.getLocation(), (float) random.nextInt(29), BeamAngle);
+                    dealib_lineDataList = MakeParticle(amount, engine, weapon, from, BeamAngle, dealib_lineDataList);
+
 
 //                weapon.getShip().getShield().setRingColor(dea_helper.DEA_RainbowWithAlpha(120));
 //                weapon.getShip().getShield().setInnerColor(dea_helper.DEA_RainbowWithAlpha(120));
+                }
+                plugin.DEAlib_DrawLineInPlugin(dealib_lineDataList);
+                plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
             }
+
             boolean IsNearSomething = false;
 
 
@@ -77,7 +99,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
             if (IsNearSomething) {
 
-                DEA_EMPArcHelper.DEA_SpawnDamagingEMPArc(
+                DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc(
                         weapon.getShip(),
                         from,
                         THETHING,
@@ -97,10 +119,11 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     }
 
-    public void MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle) {
+    public List<DEAlib_LineData> MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle, List<DEAlib_LineData> dealib_lineDataList) {
 
-        DEA_RenderHelper.DEA_DrawLine(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), shipColor);
+        dealib_lineDataList.add(new DEAlib_LineData(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), shipColor));
 
+        return dealib_lineDataList;
 //        MagicFakeBeam.spawnFakeBeam(
 //                engine,
 //                from,

@@ -30,7 +30,8 @@ Karabasan Hidden Hullmod,DEA_KarabasanHiddenHullmod,,,Staralites,offensive,Karab
 ,,,,,,,,,,,,,,,,,,
 #HİDDEN HULLMODS,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-max cr,DEA_100CR,,,AAAAAAA,,,0,,,TRUE,0,0,0,0,data.hullmods.DEA_100CR,100% cr,100% cr,graphics/icons/hullmods/Test_Image.png
-repair weapons,DEA_NoWeaponDisabling,,,AAAAAAA,,,0,,,TRUE,0,0,0,0,data.hullmods.DEA_NoWeaponDisabling,no weapon disabling,no weapon disabling,graphics/icons/hullmods/Test_Image.png
+max cr,DEA_100CR,,,AAAAAAA,,,0,,FALSE,,0,0,0,0,data.hullmods.DEA_100CR,100% cr,100% cr,graphics/icons/hullmods/Test_Image.png
+repair weapons,DEA_NoWeaponDisabling,,,AAAAAAA,,,0,,FALSE,,0,0,0,0,data.hullmods.DEA_NoWeaponDisabling,no weapon disabling,no weapon disabling,graphics/icons/hullmods/Test_Image.png
+DEA_DrawOverBoundsWFillname,DEA_DrawOverBoundsWFill,,,AAAAAAA,,,0,,FALSE,,0,0,0,0,data.hullmods.DEA_DrawOverBoundsWFill,DEA_DrawOverBoundsWFill,DEA_DrawOverBoundsWFill,graphics/icons/hullmods/Test_Image.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DEAlib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../DEAlib/jars/DEAlib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,40 +1,21 @@
 package data.weapons.effects;
 
-import com.fs.starfarer.C;
+import DEA.helper.DEAlib_BoundsHelper;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
-import com.fs.starfarer.api.loading.WeaponSlotAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import data.helper.DEA_DamageBaseClass;
-import data.helper.DEA_Helper;
-import data.helper.DEA_Logger;
-import data.helper.DEA_RenderHelper;
-import data.helper.UNUSED.kt.DEA_OpenGLHelper;
-import data.plugins.DEA_CombatLayeredRenderingPlugin;
-import data.weapons.DEA_Deco_Reactor;
-import org.apache.log4j.Logger;
-import org.jetbrains.annotations.ApiStatus;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.LazyLib;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
+import DEA.helper.DEAlib_DamageBaseClass;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicFakeBeam;
 
 import java.awt.*;
-import java.util.Iterator;
-import java.util.Random;
 
-import static data.helper.DEA_BoundsHelper.DEA_GetRandomBoundLocation;
-import static data.helper.DEA_EMPArcHelper.*;
-import static data.helper.DEA_Statics.*;
+import static DEA.helper.DEAlib_EMPArcHelper.*;
 
 
 public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin implements BeamEffectPlugin {
 
-    public static DEA_DamageBaseClass DEA_DamageBaseClass_DEA_Hopelesness = new DEA_DamageBaseClass();
+    public static DEAlib_DamageBaseClass DEA_DamageBaseClass_DEA_Hopelesness = new DEAlib_DamageBaseClass();
     public IntervalUtil timer = new IntervalUtil(1.9f, 1.9f);
 
     public boolean doOnce = true;
@@ -78,7 +59,7 @@ public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin impl
 
             }
 
-            //tbh fuck render pluging standalone opengl is gigachad
+            //tbh fuck render pluging standalone opengl is gigachad//mf
 //            this.render(getActiveLayers().iterator().next(), Global.getCombatEngine().getViewport());
 //            DEA_RenderHelper.DEA_DrawLine(ship.getLocation(), beam.getWeapon().getLocation());
 //            DEA_CombatLayeredRenderingPlugin dea_combatLayeredRenderingPlugin = new DEA_CombatLayeredRenderingPlugin();
@@ -104,8 +85,12 @@ public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin impl
 
 //            dea_helper.DEA_SpawnEMPArcsBetweenShipsBounds(ship, 4f, shipColor, shipColor);
 
+            for (Vector2f location : DEAlib_BoundsHelper.DEAlib_GetListOfBoundLocations(ship)) {
 
-            DEA_SpawnEMPArcVisual(DEA_GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
+                DEA_SpawnEMPArcVisual(location, beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
+            }
+
+//            DEA_SpawnEMPArcVisual(DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
 
             Global.getCombatEngine().maintainStatusForPlayerShip(
                     ship.getId(),
