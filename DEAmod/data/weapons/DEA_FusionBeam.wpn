@@ -6,12 +6,12 @@
   
 	"beamEffect":"data.weapons.effects.DEA_FusionBeam_Effect",
 
-  "turretSprite": "graphics/DEA_Sting.png",
-  "turretGlowSprite": "graphics/DEA_Sting.png",
-  "turretGunSprite": "graphics/DEA_Sting.png",
-  "hardpointSprite": "graphics/DEA_Sting.png",
-  "hardpointGlowSprite": "graphics/DEA_Sting.png",
-  "hardpointGunSprite": "graphics/DEA_Sting.png",
+  "turretSprite": "graphics/DEA_null.png",
+  "turretGlowSprite": "graphics/DEA_null.png",
+  "turretGunSprite": "graphics/DEA_null.png",
+  "hardpointSprite": "graphics/DEA_null.png",
+  "hardpointGlowSprite": "graphics/DEA_null.png",
+  "hardpointGunSprite": "graphics/DEA_null.png",
   
   "turretOffsets": [
     0,

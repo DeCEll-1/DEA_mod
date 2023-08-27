@@ -1,0 +1,67 @@
+{
+  "id": "DEA_BoundlessMicroMissile",
+  "specClass": "projectile",
+  "projectileSpecId": "DEA_BoundlessMissileProj",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/DEA_BoundlessMissile.png",
+  "turretGunSprite": "graphics/weapons/DEA_BoundlessMissile.png",
+  "hardpointSprite": "graphics/weapons/DEA_BoundlessMissile.png",
+  "hardpointGunSprite": "graphics/weapons/DEA_BoundlessMissile.png",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    11,
+    7,
+    11,
+    3,
+    11,
+    3,
+    11,
+    -2,
+    11,
+    -2,
+    11,
+    -6,
+    11,
+    -6
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    17,
+    7,
+    17,
+    3,
+    17,
+    3,
+    17,
+    -2,
+    17,
+    -2,
+    17,
+    -6,
+    17,
+    -6
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "NONE",
+  "fireSoundOne": "swarmer_fire"
+}

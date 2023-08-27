@@ -1,0 +1,11 @@
+small: //unset
+
+medium: right angle
+
+arc: triangles left sides lenght
+angle: will look at the right side of the triangle
+order mod: triangles right sides lenght
+
+large: circle
+
+//unset currently

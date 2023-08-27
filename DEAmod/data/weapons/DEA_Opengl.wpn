@@ -1,0 +1,30 @@
+{
+  "id": "DEA_Opengl",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "SMALL",
+
+  "everyFrameEffect":"data.weapons.DEA_OpenglWeapon",
+  
+  "turretSprite": "graphics/DEA_Error_Image.png",
+  "turretGlowSprite": "graphics/DEA_Error_Image.png",
+  "turretGunSprite": "graphics/DEA_Error_Image.png",
+  "hardpointSprite": "graphics/DEA_null.png",
+  "hardpointGlowSprite": "graphics/DEA_null.png",
+  "hardpointGunSprite": "graphics/DEA_Error_Image.png",
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "textureType": ROUGH
+}

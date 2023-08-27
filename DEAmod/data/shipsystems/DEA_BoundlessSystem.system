@@ -1,0 +1,23 @@
+{
+	"id":"DEA_BoundlessSystem",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+  "aiScript": "data.AI.DEA_BoundlessAI",
+	
+	"statsScript":"data.shipsystems.scripts.DEA_BoundlessSystem",
+
+	"runScriptWhileIdle":true,
+		
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+

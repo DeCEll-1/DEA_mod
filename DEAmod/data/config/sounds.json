@@ -17,5 +17,11 @@
 "DEA_JustKillYourself":
 	[
 		{"file":"sounds/weapon sounds/DEA_JustKillYourself.ogg","pitch":1.00,"volume":0.3}
+	],
+	
+
+"DEA_2hou":#i dont own this song
+	[
+		{"file":"sounds/2hou/【東方】Bad Apple!! ＰＶ【影絵】.ogg","pitch":1.00,"volume":0.3}
 	]
 }

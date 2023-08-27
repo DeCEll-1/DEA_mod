@@ -3,8 +3,9 @@ ZAWARUDO,DEA_ZaWarudo,,,,,,0.25,,,,4,10,2,10,,,,TRUE,,,,,,,,,graphics/icons/hull
 Temporal Shield,DEA_TemporalShield,,,,,,,,,,2,7,1,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Flux Redirector,DEA_FluxConsumer,,,,,,,,1,0.01,0.5,0.5,0.5,1,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
 Missile Teleporter,DEA_MissileStrike,,,,,,0.1,,5,0,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
-Wireless Time Manipulator,DEA_ShipTimeManipulator,,,,,,0.1,,,,4,10,2,10,,,,TRUE,,,,,,,,,graphics/icons/hullmods/Test_Image.png
-OverDrive,DEA_PenteractSystem,1,,,,,0.1,,,,0.5,4,0.5,3,,,,,TRUE,,,,,,,,graphics/icons/hullmods/Test_Image.png
+OverDrive,DEA_PenteractSystem,1,,,,,0.1,,,,0.5,4,0.5,3,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
+Wireless Time Manipulator,DEA_BoundlessSystem,,,,,,0.2,,,,0.5,10,1,10,,,,,,,,,,,,,graphics/icons/hullmods/Test_Image.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #REFERANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

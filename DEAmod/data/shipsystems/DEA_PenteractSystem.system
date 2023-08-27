@@ -1,11 +1,12 @@
 {
 	"id":"DEA_PenteractSystem",
 	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"aiType":"CUSTOM",
+  "aiScript": "data.AI.DEA_UseSystemIfInRange",
 	
 	"statsScript":"data.shipsystems.scripts.DEA_PenteractSystem",
 
-	"range":500,
+	"range":3000,
 
 	"runScriptWhileIdle":true,
 		

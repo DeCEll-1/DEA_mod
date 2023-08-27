@@ -1,0 +1,286 @@
+{
+  "hullName": "Boundless",
+  "hullId": "DEA_Boundless",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/DEA_Boundless.png",
+  "style": "HIGH_TECH",
+  "height": 228,
+  "width": 244,
+  "center": [122, 100],
+  "collisionRadius": 225,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 158.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "targetingunit"
+  ],
+  "builtInWeapons": {
+    "WS0013": "DEA_Opengl",
+    "WS0015": "DEA_BoundlessMicroMissile",
+    "WS0016": "DEA_BoundlessMicroMissile"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 56,
+      "angle": 90,
+      "locations": [3, 2],
+      "renderOrderMod": 123
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 123,
+      "angle": 0,
+      "locations": [3, -2],
+      "renderOrderMod": 56
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 50,
+      "angle": 0,
+      "locations": [-53, -2],
+      "renderOrderMod": 58
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 58,
+      "angle": 90,
+      "locations": [-53, 2],
+      "renderOrderMod": 50
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 58,
+      "angle": -90,
+      "locations": [-2, 60],
+      "renderOrderMod": 47
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 47,
+      "angle": 180,
+      "locations": [-2, -60],
+      "renderOrderMod": 58
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 58,
+      "angle": -90,
+      "locations": [-2, -62],
+      "renderOrderMod": 48
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 48,
+      "angle": -180,
+      "locations": [-2, 62],
+      "renderOrderMod": 58
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 52,
+      "angle": -90,
+      "locations": [-56, -3],
+      "renderOrderMod": 43
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 43,
+      "angle": 180,
+      "locations": [-56, 3],
+      "renderOrderMod": 52
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 57,
+      "angle": 90,
+      "locations": [4, -120],
+      "renderOrderMod": 50
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 50,
+      "angle": 0,
+      "locations": [4, 120],
+      "renderOrderMod": 57
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 64746,
+      "angle": 180,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0014",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [3, 0]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": -138,
+      "locations": [-51.5, -56.5]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 138,
+      "locations": [-51.5, 56.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HIDDEN",
+      "arc": 71,
+      "angle": 10.5,
+      "locations": [4, 61]
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HIDDEN",
+      "arc": 77,
+      "angle": -11.5,
+      "locations": [4, -61]
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 177,
+      "angle": -135,
+      "locations": [-75, -28.5]
+    },
+    {
+      "id": "WS0020",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 177,
+      "angle": 135,
+      "locations": [-75, 28.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-4.5, 7],
+      "length": 103.396797,
+      "width": 5.514291,
+      "angle": 135,
+      "contrailSize": 5.514291,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-4.5, -7],
+      "length": 103.396797,
+      "width": 5.514291,
+      "angle": -135,
+      "contrailSize": 5.514291,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [118, -0],
+      "length": 150,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-3, 61],
+      "length": 78.470001,
+      "width": 4.07,
+      "angle": 180,
+      "contrailSize": 4.07,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-3, -61],
+      "length": 78.470001,
+      "width": 4.07,
+      "angle": -180,
+      "contrailSize": 4.07,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [116.5, -2.5],
+      "length": 250,
+      "width": 5,
+      "angle": -154,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [116.5, 2.5],
+      "length": 250,
+      "width": 5,
+      "angle": 154,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -100, 2,
+    0, 122,
+    58, 122,
+    4, 61,
+    128, 1,
+    128, -1,
+    4, -61,
+    58, -122,
+    0, -122,
+    -100, -2
+  ]
+}

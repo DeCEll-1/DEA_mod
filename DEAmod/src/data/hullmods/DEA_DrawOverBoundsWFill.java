@@ -20,15 +20,16 @@ public class DEA_DrawOverBoundsWFill extends BaseHullMod {
     private DEAlib_RendererPlugin plugin = null;
 
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        if (plugin == null) {
-            plugin = new DEAlib_RendererPlugin();
-            Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
-        }
+
     }
 
     public void advanceInCombat(ShipAPI ship, float amount) {
         try {
 
+            if (plugin == null) {
+                plugin = new DEAlib_RendererPlugin();
+                Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
+            }
 
             ship.getExactBounds().update(ship.getLocation(), ship.getFacing());
 
@@ -42,10 +43,10 @@ public class DEA_DrawOverBoundsWFill extends BaseHullMod {
                 colorList.add(Color.white);
             }
 
-            dealib_polygonDataList.add(new DEAlib_PolygonData(boundList, colorList, GL_FILL));
+            dealib_polygonDataList.add(new DEAlib_PolygonData(boundList, colorList, true));
 
-            plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
             plugin.DEAlib_PolygonInPlugin(dealib_polygonDataList);
+            plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
 
 
         } catch (Exception ex) {

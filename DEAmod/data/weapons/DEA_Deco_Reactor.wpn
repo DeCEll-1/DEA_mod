@@ -9,8 +9,8 @@
   "turretSprite": "graphics/DEA_Error_Image.png",
   "turretGlowSprite": "graphics/DEA_Error_Image.png",
   "turretGunSprite": "graphics/DEA_Error_Image.png",
-  "hardpointSprite": "graphics/DEA_Sting.png",
-  "hardpointGlowSprite": "graphics/DEA_Sting.png",
+  "hardpointSprite": "graphics/DEA_null.png",
+  "hardpointGlowSprite": "graphics/DEA_null.png",
   "hardpointGunSprite": "graphics/DEA_Error_Image.png",
   "turretOffsets": [
     0,

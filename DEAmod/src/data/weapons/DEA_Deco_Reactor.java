@@ -4,7 +4,8 @@ import DEA.helper.DEAlib_DamageBaseClass;
 import DEA.helper.DEAlib_EMPArcHelper;
 import DEA.helper.render.DEAlib_RendererPlugin;
 import DEA.helper.render.renderClassesFolder.DEAlib_LineData;
-import DEA.helper.render.renderClassesFolder.DEAlib_PolygonWHeightAndCenterData;
+import DEA.helper.render.renderClassesFolder.DEAlib_LineWWidthData;
+import DEA.helper.render.renderClassesFolder.DEAlib_RingData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -43,6 +44,8 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
     private DEAlib_RendererPlugin plugin = null;
 
 
+    private float currentAngle = 999;
+
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         try {
 
@@ -59,7 +62,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
                 this.shipColor = weapon.getShip().getSpriteAPI().getAverageColor();
             }
 
-            List<DEAlib_LineData> dealib_lineDataList = new ArrayList<>();
+            List<DEAlib_LineWWidthData> dealib_lineDataList = new ArrayList<>();
 
             timer.advance(amount);
             if (!engine.isPaused()) {
@@ -72,56 +75,115 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 //                weapon.getShip().getShield().setRingColor(dea_helper.DEA_RainbowWithAlpha(120));
 //                weapon.getShip().getShield().setInnerColor(dea_helper.DEA_RainbowWithAlpha(120));
                 }
-                plugin.DEAlib_DrawLineInPlugin(dealib_lineDataList);
+                plugin.DEAlib_LineWWidthInPlugin(dealib_lineDataList);
                 plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
-            }
-
-            boolean IsNearSomething = false;
 
 
-            for (CombatEntityAPI s : CombatUtils.getEntitiesWithinRange(weapon.getLocation(), 1500f)) {//those are for checking if they are near anything but it lags more than without it rn so
-                IsNearSomething = false;
-                if (s instanceof ShipAPI) {
+                boolean IsNearSomething = false;
 
-                    if (!((ShipAPI) s).getId().equals(weapon.getShip().getId())) {
-                        if (((ShipAPI) s).isAlive()) {
+
+                for (CombatEntityAPI s : CombatUtils.getEntitiesWithinRange(weapon.getLocation(), 1500f)) {//those are for checking if they are near anything but it lags more than without it rn so
+                    IsNearSomething = false;
+                    if (s instanceof ShipAPI) {
+
+                        if (!((ShipAPI) s).getId().equals(weapon.getShip().getId())) {
+                            if (((ShipAPI) s).isAlive() && !((ShipAPI) s).isAlly()) {
 //                            DEA_Logger.DEA_log(this.getClass(), ((ShipAPI) s).getId() + " - ", weapon.getShip().getId());
 
-                            THETHING = (ShipAPI) s;
-                            IsNearSomething = true;
-                            break;
+                                THETHING = (ShipAPI) s;
+                                IsNearSomething = true;
+                                break;
+                            }
                         }
+
+
                     }
-
-
                 }
+
+                if (IsNearSomething) {
+
+                    DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc(
+                            weapon.getShip(),
+                            from,
+                            THETHING,
+                            DEA_Penteract_DamageBaseClass,
+                            1500f,
+                            "",
+                            4f,
+                            shipColor,
+                            shipColor
+                    );
+
+                    IDOfTheLastShip = ((ShipAPI) THETHING).getId();
+                }
+
             }
 
-            if (IsNearSomething) {
 
-                DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc(
-                        weapon.getShip(),
-                        from,
-                        THETHING,
-                        DEA_Penteract_DamageBaseClass,
-                        1500f,
-                        "",
-                        4f,
-                        shipColor,
-                        shipColor
-                );
+//region s
+//            Vector2f EyeCenter = weapon.getLocation();
+//
+//            float radius = 100f;
+//
+//
+//            float enemyAngle = VectorUtils.getAngle(THETHING.getLocation(), EyeCenter) + 6f;
+//
+//            if (currentAngle == 999) {
+//                currentAngle = weapon.getShip().getFacing();
+//            }
+//
+//            if (currentAngle <= enemyAngle) {
+//                currentAngle += 1f;
+//            }
+//
+//            if (currentAngle >= enemyAngle) {
+//
+//
+//                currentAngle -= 1f;
+//            }
 
-                IDOfTheLastShip = ((ShipAPI) THETHING).getId();
-            }
+
+//                currentAngle = enemyAngle;
+
+//                plugin.DEAlib_CircleInPlugin(DEA_DrawEye.DEA_DrawEyeFull(ship.getLocation(), 200f, 26, ship));//unneeded
+
+//            List<DEAlib_RingData> DEA_Ring = new ArrayList<>();
+//
+//
+//            DEAlib_RingData ring = new DEAlib_RingData(EyeCenter, 30, currentAngle, radius, 4f, new Color(255, 255, 255, 50));
+//
+//            DEA_Ring.add(ring);
+//
+//            plugin.DEAlib_Ring(DEA_Ring);
+//
+//            List<DEAlib_LineWWidthData> EyeCornea = new ArrayList<>();
+//
+//            EyeCornea.add(new DEAlib_LineWWidthData(
+//                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle + 180),
+//                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle + 12f + 180),
+//                    4f,
+//                    Color.RED
+//            ));
+//
+//            EyeCornea.add(new DEAlib_LineWWidthData(
+//                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle - 12f + 180),
+//                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle - 24f + 180),
+//                    4f,
+//                    Color.RED
+//            ));
+//
+//            plugin.DEAlib_LineWWidthInPlugin(EyeCornea);
+//endregion
+
         } catch (Exception ex) {
             return;
         }
 
     }
 
-    public List<DEAlib_LineData> MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle, List<DEAlib_LineData> dealib_lineDataList) {
+    public List<DEAlib_LineWWidthData> MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle, List<DEAlib_LineWWidthData> dealib_lineDataList) {
 
-        dealib_lineDataList.add(new DEAlib_LineData(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), shipColor));
+        dealib_lineDataList.add(new DEAlib_LineWWidthData(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), 1f, shipColor));
 
         return dealib_lineDataList;
 //        MagicFakeBeam.spawnFakeBeam(
