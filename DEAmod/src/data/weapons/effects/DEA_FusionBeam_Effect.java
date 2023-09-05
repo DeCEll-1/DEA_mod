@@ -84,14 +84,14 @@ public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin impl
 
 //            for (int i = 0; i < 20; i++) {
 
-            DEAlib_EMPArcHelper.DEA_SpawnEMPArcsBetweenShipsBounds(ship, 4f, shipColor, shipColor);
+            DEAlib_EMPArcHelper.SpawnEMPArcsBetweenShipsBounds(ship, 4f, shipColor, shipColor);
 
 //            for (Vector2f location : DEAlib_BoundsHelper.DEAlib_GetListOfBoundLocations(ship)) {
 //
 //                DEA_SpawnEMPArcVisual(location, beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
 //            }
 
-            DEA_SpawnEMPArcVisual(DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
+            SpawnEMPArcVisual(DEAlib_BoundsHelper.GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
 
             Global.getCombatEngine().maintainStatusForPlayerShip(
                     ship.getId(),
@@ -137,7 +137,7 @@ public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin impl
 //                );
 
 
-                DEA_SpawnEMPArcLineDamaging(
+                SpawnEMPArcLineDamaging(
                         beam.getWeapon().getLocation(),
                         beam.getWeapon().getCurrAngle(),
                         (int) beam.getLength(),

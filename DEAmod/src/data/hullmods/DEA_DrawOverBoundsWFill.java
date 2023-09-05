@@ -35,7 +35,7 @@ public class DEA_DrawOverBoundsWFill extends BaseHullMod {
 
             List<DEAlib_PolygonData> dealib_polygonDataList = new ArrayList<>();
 
-            List<Vector2f> boundList = DEAlib_BoundsHelper.DEAlib_GetListOfBoundLocations(ship);
+            List<Vector2f> boundList = DEAlib_BoundsHelper.GetListOfBoundLocations(ship);
 
             List<Color> colorList = new ArrayList<>();
 
@@ -45,8 +45,8 @@ public class DEA_DrawOverBoundsWFill extends BaseHullMod {
 
             dealib_polygonDataList.add(new DEAlib_PolygonData(boundList, colorList, true));
 
-            plugin.DEAlib_PolygonInPlugin(dealib_polygonDataList);
-            plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
+            plugin.PolygonInPlugin(dealib_polygonDataList);
+            plugin.ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
 
 
         } catch (Exception ex) {

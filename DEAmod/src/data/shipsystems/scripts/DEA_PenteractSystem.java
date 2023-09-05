@@ -86,11 +86,11 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
                     doOnce = false;
                 }
 
-                plugin.DEAlib_Ring(null);
-                plugin.DEAlib_BoxInPlugin(null);
-                plugin.DEAlib_PolygonInPlugin(null);
-                plugin.DEAlib_CircleInPlugin(null);
-                plugin.DEAlib_LineWWidthInPlugin(null);
+                plugin.Ring(null);
+                plugin.SquareInPlugin(null);
+                plugin.PolygonInPlugin(null);
+                plugin.CircleInPlugin(null);
+                plugin.LineWWidthInPlugin(null);
 
                 List<DEAlib_RingData> DEA_Ring = new ArrayList<>();
 
@@ -101,20 +101,20 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 
                     ship.getExactBounds().update(ship.getLocation(), ship.getFacing());
 
-                    List<DEAlib_BoxData> dealib_boxDataList = new ArrayList<>();
+                    List<DEAlib_SquareData> dealib_boxDataList = new ArrayList<>();
 
                     DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 20f, angle + 0f, ship.getCollisionRadius() * 2, 4f, shipColor));
 //                    DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 20f, angle + 0f, ship.getSpriteAPI().getHeight(), shipColor);
 
                     for (float i = 0; i < 90; i += 22.5) {
-                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.DEA_GetPlusMinusAngle(angle, i), ship.getCollisionRadius() * 2, 4f, shipColor));
+                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.GetPlusMinusAngle(angle, i), ship.getCollisionRadius() * 2, 4f, shipColor));
 //                        DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 4f, DEA_Helper.DEA_GetPlusMinusAngle(angle, i), ship.getSpriteAPI().getHeight(), shipColor);
                     }
 
                     DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 20f, angle2 + 0f, (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
 //                    DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 20f, angle2 + 0f, (float) (ship.getSpriteAPI().getHeight() * 0.72), shipColor);
                     for (int i = 30; i < 91; i += 30) {
-                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.DEA_GetPlusMinusAngle(angle2, i), (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
+                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.GetPlusMinusAngle(angle2, i), (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
 //                        DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 4f, DEA_Helper.DEA_GetPlusMinusAngle(angle2, i), (float) (ship.getSpriteAPI().getHeight() * 0.72), shipColor);
                     }
 
@@ -134,7 +134,7 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
                     List<DEAlib_PolygonData> dealib_polygonDataList = new ArrayList<>();
 
 //                    if (boundList == null) {
-                    boundList = DEAlib_BoundsHelper.DEAlib_GetListOfBoundLocations(ship);
+                    boundList = DEAlib_BoundsHelper.GetListOfBoundLocations(ship);
                     for (int i = 0; i < boundList.size(); i++) {
                         colorList.add(Color.white);
                     }
@@ -150,10 +150,10 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 //                    dealib_polygonDataList.add(new DEAlib_PolygonData(boundList2, colorList, GL_LINE));
 
 //add constructer to the plugin and put layers in it
-                    plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.BELOW_SHIPS_LAYER);
-                    plugin.DEAlib_BoxInPlugin(dealib_boxDataList);
+                    plugin.ChangeRenderLayerInPlugin(CombatEngineLayers.BELOW_SHIPS_LAYER);
+                    plugin.SquareInPlugin(dealib_boxDataList);
 //                    plugin.DEAlib_PolygonInPlugin(dealib_polygonDataList);
-                    plugin.DEAlib_Ring(DEA_Ring);
+                    plugin.Ring(DEA_Ring);
 
 
                 }
@@ -172,7 +172,7 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 
                             if (!enemy.getLocation().equals(ship.getLocation())) {
                                 if (enemy instanceof ShipAPI && !((ShipAPI) enemy).isAlly() && ((ShipAPI) enemy).isAlive()) {
-                                    DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc(
+                                    DEAlib_EMPArcHelper.SpawnDamagingEMPArc(
                                             ship,
                                             ship.getLocation(),
                                             enemy,

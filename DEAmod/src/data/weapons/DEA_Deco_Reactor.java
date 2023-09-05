@@ -20,9 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static DEA.helper.DEAlib_Helper.DEA_Rainbow;
 import static DEA.helper.DEAlib_Statics.random;
-import static DEA.helper.DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc;
 
 
 public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
@@ -75,8 +73,8 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 //                weapon.getShip().getShield().setRingColor(dea_helper.DEA_RainbowWithAlpha(120));
 //                weapon.getShip().getShield().setInnerColor(dea_helper.DEA_RainbowWithAlpha(120));
                 }
-                plugin.DEAlib_LineWWidthInPlugin(dealib_lineDataList);
-                plugin.DEAlib_ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
+                plugin.LineWWidthInPlugin(dealib_lineDataList);
+                plugin.ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
 
 
                 boolean IsNearSomething = false;
@@ -102,7 +100,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
                 if (IsNearSomething) {
 
-                    DEAlib_EMPArcHelper.DEA_SpawnDamagingEMPArc(
+                    DEAlib_EMPArcHelper.SpawnDamagingEMPArc(
                             weapon.getShip(),
                             from,
                             THETHING,
@@ -172,7 +170,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 //                    Color.RED
 //            ));
 //
-//            plugin.DEAlib_LineWWidthInPlugin(EyeCornea);
+//            plugin.LineWWidthInPlugin(EyeCornea);
 //endregion
 
         } catch (Exception ex) {

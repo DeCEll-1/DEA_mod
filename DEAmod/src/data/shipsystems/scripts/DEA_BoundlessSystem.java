@@ -47,6 +47,9 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
 
         try {
 
+            
+
+
             if (plugin == null) {//2hou nuts
                 plugin = new DEAlib_RendererPlugin();
                 Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
@@ -65,53 +68,71 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
                 return;
             }
 
-            if (run && flipFlop) {//2hou nuts
+            //rather 2hou acts
+            if (Global.getSettings().getBoolean("2houBadApplePlayOnDEA_Boundless")) {
+
+                if (run && flipFlop) {//2hou nuts
 
 
-                Vector2f topLeft = new Vector2f(0f * 2, 360f * 2);
-                Vector2f topRight = new Vector2f(480f * 2, 360f * 2);
-                Vector2f bottomLeft = new Vector2f(0f * 2, 0f * 2);
-                Vector2f bottomRight = new Vector2f(480f * 2, 0f * 2);
+                    Vector2f topLeft = new Vector2f(0f * 2, 360f * 2);
+                    Vector2f topRight = new Vector2f(480f * 2, 360f * 2);
+                    Vector2f bottomLeft = new Vector2f(0f * 2, 0f * 2);
+                    Vector2f bottomRight = new Vector2f(480f * 2, 0f * 2);
 
-                int amountOfZeros = 4 - String.valueOf(frame).length();
+                    int amountOfZeros = 4 - String.valueOf(frame).length();
 
 
-                StringBuilder fileName = new StringBuilder("a/2hou/001_00");
+                    StringBuilder fileName = new StringBuilder("a/2hou/001_00");
 
-                for (int i = 0; i < amountOfZeros; i++) {
+                    for (int i = 0; i < amountOfZeros; i++) {
 
-                    fileName.append("0");
+                        fileName.append("0");
 
-                }
+                    }
 
-                fileName.append(frame);
+                    fileName.append(frame);
 
-                fileName.append(".jpg");
+                    fileName.append(".jpg");
 
 //                Global.getSettings().loadTexture(fileName.toString());
 
-                DEAlib_SquareData square = new DEAlib_SquareData(
-                        topLeft,
-                        topRight,
-                        bottomLeft,
-                        bottomRight,
-                        Color.WHITE,
-                        true,
-                        Global.getSettings().getSprite(fileName.toString())
-                );
+                    DEAlib_SquareData square = new DEAlib_SquareData(
+                            topLeft,
+                            topRight,
+                            bottomLeft,
+                            bottomRight,
+                            Color.WHITE,
+                            true,
+                            Global.getSettings().getSprite(fileName.toString())
+                    );
 
-                List<DEAlib_SquareData> squareList = new ArrayList<>();
+                    List<DEAlib_SquareData> squareList = new ArrayList<>();
 
-                squareList.add(square);
+                    squareList.add(square);
 
-                plugin.DEAlib_SquareInPlugin(squareList);
+                    plugin.SquareInPlugin(squareList);
 
-                frame++;
+                    frame++;
+                }
+
+                flipFlop = !flipFlop;
+
+                if (state == State.IN) {//2hou nuts
+                    if (doOnce2hou) {
+                        run = true;
+                        frame = 0;
+                        SoundAPI sound = Global.getSoundPlayer().playSound(
+                                "DEA_2hou",
+                                1f,
+                                1f,
+                                ship.getLocation(),
+                                ship.getVelocity()
+                        );
+
+                    }
+                    doOnce2hou = false;
+                }
             }
-
-            flipFlop = !flipFlop;
-
-
 
             ShipAPI targetship = findTarget(ship);
 
@@ -121,23 +142,6 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
 
             float maxRangeBonus = 10f;
 
-            if (state == State.IN) {//2hou nuts
-                if (doOnce2hou) {
-                    run = true;
-                    frame = 0;
-                    SoundAPI sound = Global.getSoundPlayer().playSound(
-                            "DEA_2hou",
-                            1f,
-                            1f,
-                            ship.getLocation(),
-                            ship.getVelocity()
-                    );
-
-                }
-                doOnce2hou = false;
-
-
-            }
 
             if (state == State.OUT) {
                 Global.getCombatEngine().getTimeMult().unmodifyMult(id);

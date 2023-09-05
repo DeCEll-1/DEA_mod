@@ -9,3 +9,14 @@ C:\Users\poedx\source\repos\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffC
 C:\Users\poedx\source\repos\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.exe
 C:\Users\poedx\source\repos\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.pdb
 C:\Users\poedx\source\repos\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.Form1.resources
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\bin\Debug\DEAmod_TriangleStuffCalculator.exe.config
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\bin\Debug\DEAmod_TriangleStuffCalculator.exe
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\bin\Debug\DEAmod_TriangleStuffCalculator.pdb
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.csproj.SuggestedBindingRedirects.cache
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.Form1.resources
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.Properties.Resources.resources
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.csproj.GenerateResource.cache
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.exe
+C:\Program Files (x86)\Fractal Softworks\Starsector\mods\DEAmod\a\DEAmod_TriangleStuffCalculator\DEAmod_TriangleStuffCalculator\obj\Debug\DEAmod_TriangleStuffCalculator.pdb

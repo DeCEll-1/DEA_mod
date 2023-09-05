@@ -3,6 +3,9 @@
     # See https://starsector.fandom.com/wiki/MagicLib#MagicSettings
     # and https://starsector.fandom.com/wiki/Category:Modding#Mods_inter-compatibility_and_integration
 
+
+  "2houBadApplePlayOnDEA_Boundless": false,#default is false, when its true you can play 2hou Bad Apple!, requires the folder a to not be deleted. its on the a folder folder it takes like 20 mb. you can get java.lang.OutOfMemoryError if you didnt gave enough ram for the game and this is enabled, disable other mods if you want to use this
+  
   "graphics": {
     "combatNuts": {
       "observantEye1": "graphics/textures/TheObservant1.png",

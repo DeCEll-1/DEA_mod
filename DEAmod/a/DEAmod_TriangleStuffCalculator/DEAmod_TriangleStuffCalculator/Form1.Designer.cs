@@ -42,6 +42,19 @@
             this.tb_PointAY = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_enter = new System.Windows.Forms.Button();
+            this.pnl_Color = new System.Windows.Forms.Panel();
+            this.tb_R = new System.Windows.Forms.TextBox();
+            this.tb_G = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tb_B = new System.Windows.Forms.TextBox();
+            this.tb_A = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_Filled = new System.Windows.Forms.RadioButton();
+            this.cb_Lines = new System.Windows.Forms.RadioButton();
+            this.cb_DoNotDraw = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // tb_result
@@ -58,6 +71,8 @@
             this.tb_PointAX.Name = "tb_PointAX";
             this.tb_PointAX.Size = new System.Drawing.Size(100, 20);
             this.tb_PointAX.TabIndex = 1;
+            this.tb_PointAX.Text = "0";
+            this.tb_PointAX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label1
             // 
@@ -74,6 +89,8 @@
             this.tb_PointBX.Name = "tb_PointBX";
             this.tb_PointBX.Size = new System.Drawing.Size(100, 20);
             this.tb_PointBX.TabIndex = 3;
+            this.tb_PointBX.Text = "0";
+            this.tb_PointBX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label2
             // 
@@ -90,6 +107,8 @@
             this.tb_PointCX.Name = "tb_PointCX";
             this.tb_PointCX.Size = new System.Drawing.Size(100, 20);
             this.tb_PointCX.TabIndex = 5;
+            this.tb_PointCX.Text = "0";
+            this.tb_PointCX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label3
             // 
@@ -106,6 +125,8 @@
             this.tb_PointCY.Name = "tb_PointCY";
             this.tb_PointCY.Size = new System.Drawing.Size(100, 20);
             this.tb_PointCY.TabIndex = 6;
+            this.tb_PointCY.Text = "0";
+            this.tb_PointCY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label4
             // 
@@ -122,6 +143,8 @@
             this.tb_PointBY.Name = "tb_PointBY";
             this.tb_PointBY.Size = new System.Drawing.Size(100, 20);
             this.tb_PointBY.TabIndex = 4;
+            this.tb_PointBY.Text = "0";
+            this.tb_PointBY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label6
             // 
@@ -138,6 +161,8 @@
             this.tb_PointAY.Name = "tb_PointAY";
             this.tb_PointAY.Size = new System.Drawing.Size(100, 20);
             this.tb_PointAY.TabIndex = 2;
+            this.tb_PointAY.Text = "0";
+            this.tb_PointAY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheck);
             // 
             // label7
             // 
@@ -153,32 +178,182 @@
             this.btn_enter.Location = new System.Drawing.Point(15, 239);
             this.btn_enter.Name = "btn_enter";
             this.btn_enter.Size = new System.Drawing.Size(310, 23);
-            this.btn_enter.TabIndex = 7;
+            this.btn_enter.TabIndex = 99;
             this.btn_enter.Text = "heheheheheheeheheh";
             this.btn_enter.UseVisualStyleBackColor = true;
             this.btn_enter.Click += new System.EventHandler(this.btn_enter_Click);
+            this.btn_enter.Enter += new System.EventHandler(this.btn_enter_Enter);
+            this.btn_enter.Leave += new System.EventHandler(this.btn_enter_Enter);
+            // 
+            // pnl_Color
+            // 
+            this.pnl_Color.Location = new System.Drawing.Point(224, 103);
+            this.pnl_Color.Name = "pnl_Color";
+            this.pnl_Color.Size = new System.Drawing.Size(101, 98);
+            this.pnl_Color.TabIndex = 8;
+            // 
+            // tb_R
+            // 
+            this.tb_R.Location = new System.Drawing.Point(12, 142);
+            this.tb_R.MaxLength = 3;
+            this.tb_R.Name = "tb_R";
+            this.tb_R.Size = new System.Drawing.Size(100, 20);
+            this.tb_R.TabIndex = 7;
+            this.tb_R.Text = "255";
+            this.tb_R.Enter += new System.EventHandler(this.btn_enter_Enter);
+            this.tb_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheckColor);
+            this.tb_R.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp);
+            this.tb_R.Leave += new System.EventHandler(this.btn_enter_Enter);
+            // 
+            // tb_G
+            // 
+            this.tb_G.Location = new System.Drawing.Point(118, 142);
+            this.tb_G.MaxLength = 3;
+            this.tb_G.Name = "tb_G";
+            this.tb_G.Size = new System.Drawing.Size(100, 20);
+            this.tb_G.TabIndex = 8;
+            this.tb_G.Text = "255";
+            this.tb_G.Enter += new System.EventHandler(this.btn_enter_Enter);
+            this.tb_G.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheckColor);
+            this.tb_G.Leave += new System.EventHandler(this.btn_enter_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "R";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(118, 126);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "G";
+            // 
+            // tb_B
+            // 
+            this.tb_B.Location = new System.Drawing.Point(12, 181);
+            this.tb_B.MaxLength = 3;
+            this.tb_B.Name = "tb_B";
+            this.tb_B.Size = new System.Drawing.Size(100, 20);
+            this.tb_B.TabIndex = 9;
+            this.tb_B.Text = "255";
+            this.tb_B.Enter += new System.EventHandler(this.btn_enter_Enter);
+            this.tb_B.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheckColor);
+            this.tb_B.Leave += new System.EventHandler(this.btn_enter_Enter);
+            // 
+            // tb_A
+            // 
+            this.tb_A.Location = new System.Drawing.Point(118, 181);
+            this.tb_A.MaxLength = 3;
+            this.tb_A.Name = "tb_A";
+            this.tb_A.Size = new System.Drawing.Size(100, 20);
+            this.tb_A.TabIndex = 10;
+            this.tb_A.Text = "255";
+            this.tb_A.Enter += new System.EventHandler(this.btn_enter_Enter);
+            this.tb_A.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyCheckColor);
+            this.tb_A.Leave += new System.EventHandler(this.btn_enter_Enter);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 165);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "B";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(118, 165);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "A";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 208);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 101;
+            this.label11.Text = "Draw Type";
+            // 
+            // cb_Filled
+            // 
+            this.cb_Filled.AutoSize = true;
+            this.cb_Filled.Checked = true;
+            this.cb_Filled.Location = new System.Drawing.Point(77, 208);
+            this.cb_Filled.Name = "cb_Filled";
+            this.cb_Filled.Size = new System.Drawing.Size(49, 17);
+            this.cb_Filled.TabIndex = 11;
+            this.cb_Filled.TabStop = true;
+            this.cb_Filled.Text = "Filled";
+            this.cb_Filled.UseVisualStyleBackColor = true;
+            // 
+            // cb_Lines
+            // 
+            this.cb_Lines.AutoSize = true;
+            this.cb_Lines.Location = new System.Drawing.Point(124, 208);
+            this.cb_Lines.Name = "cb_Lines";
+            this.cb_Lines.Size = new System.Drawing.Size(74, 17);
+            this.cb_Lines.TabIndex = 12;
+            this.cb_Lines.Text = "Only Lines";
+            this.cb_Lines.UseVisualStyleBackColor = true;
+            // 
+            // cb_DoNotDraw
+            // 
+            this.cb_DoNotDraw.AutoSize = true;
+            this.cb_DoNotDraw.Location = new System.Drawing.Point(204, 208);
+            this.cb_DoNotDraw.Name = "cb_DoNotDraw";
+            this.cb_DoNotDraw.Size = new System.Drawing.Size(87, 17);
+            this.cb_DoNotDraw.TabIndex = 13;
+            this.cb_DoNotDraw.Text = "Do Not Draw";
+            this.cb_DoNotDraw.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 490);
+            this.Controls.Add(this.cb_DoNotDraw);
+            this.Controls.Add(this.cb_Lines);
+            this.Controls.Add(this.cb_Filled);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pnl_Color);
             this.Controls.Add(this.btn_enter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.tb_A);
             this.Controls.Add(this.tb_PointAY);
+            this.Controls.Add(this.tb_G);
             this.Controls.Add(this.tb_PointBY);
+            this.Controls.Add(this.tb_B);
             this.Controls.Add(this.tb_PointCY);
+            this.Controls.Add(this.tb_R);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_PointCX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_PointBX);
             this.Controls.Add(this.tb_PointAX);
             this.Controls.Add(this.tb_result);
+            this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "make triangles";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +375,19 @@
         private System.Windows.Forms.TextBox tb_PointAY;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_enter;
+        private System.Windows.Forms.Panel pnl_Color;
+        private System.Windows.Forms.TextBox tb_R;
+        private System.Windows.Forms.TextBox tb_G;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tb_B;
+        private System.Windows.Forms.TextBox tb_A;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton cb_Filled;
+        private System.Windows.Forms.RadioButton cb_Lines;
+        private System.Windows.Forms.RadioButton cb_DoNotDraw;
     }
 }
 
