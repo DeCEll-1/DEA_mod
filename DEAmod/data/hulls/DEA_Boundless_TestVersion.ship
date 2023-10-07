@@ -1,6 +1,6 @@
 {
   "hullName": "Boundless",
-  "hullId": "DEA_Boundless",
+  "hullId": "DEA_Boundless2",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/DEA_Boundless.png",
   "style": "HIGH_TECH",
@@ -21,7 +21,7 @@
   },
   "weaponSlots": [
     {
-      "id": "WS0001",
+      "id": "WS0001$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -31,7 +31,7 @@
       "renderOrderMod": 123
     },
    {
-      "id": "CustomTriangleWeapon__0344f57a-9b77-4838-8017-f201c93d6637__#000000FF",
+      "id": "CustomTriangleWeapon__7f044ca8-c036-41c1-a11f-c466bf03e830$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -41,17 +41,17 @@
       "renderOrderMod": 56
     },
     {
-      "id": "WS0003#43ff64d9",
+      "id": "CustomTriangleWeapon__984179f7-7251-4b35-9224-234ab7d88a87$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 50,
       "angle": 0,
       "locations": [-53, -2],
       "renderOrderMod": 58
     },
     {
-      "id": "WS0004#66dfb6",
+      "id": "WS0004$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -61,7 +61,7 @@
       "renderOrderMod": 50
     },
     {
-      "id": "WS0005#2024a7",
+      "id": "WS0005$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -71,27 +71,27 @@
       "renderOrderMod": 47
     },
     {
-      "id": "WS0006#45e0ab",
+      "id": "WS0006$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 47,
       "angle": 180,
       "locations": [-2, -60],
       "renderOrderMod": 58
     },
     {
-      "id": "WS0007#d3b72d",
+      "id": "WS0007$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 58,
       "angle": -90,
       "locations": [-2, -62],
       "renderOrderMod": 48
     },
     {
-      "id": "WS0008#ca5a6a",
+      "id": "WS0008$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -101,17 +101,17 @@
       "renderOrderMod": 58
     },
     {
-      "id": "WS0009#3232f2",
+      "id": "WS0009$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 52,
       "angle": -90,
       "locations": [-56, -3],
       "renderOrderMod": 43
     },
     {
-      "id": "WS0010#ce405e",
+      "id": "WS0010$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -121,17 +121,17 @@
       "renderOrderMod": 52
     },
     {
-      "id": "WS0011#ce405e",
+      "id": "WS0011$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 57,
       "angle": 90,
       "locations": [4, -120],
       "renderOrderMod": 50
     },
     {
-      "id": "WS0012#f1f5be",
+      "id": "WS0012$triangleTextTexture$",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
@@ -153,7 +153,7 @@
       "id": "WS0014",
       "size": "LARGE",
       "type": "ENERGY",
-      "mount": "HARDPOINT",
+      "mount": "HIDDEN",
       "arc": 0,
       "angle": 0,
       "locations": [3, 0]

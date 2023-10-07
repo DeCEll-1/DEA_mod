@@ -1,0 +1,21 @@
+flipFlop
+
+private boolean flipFlop = true;
+
+if (flipFlop) {
+
+
+
+flipFlop = !flipFlop;
+} else flipFlop = !flipFlop;
+
+flipFlop end
+
+
+
+
+
+
+
+
+

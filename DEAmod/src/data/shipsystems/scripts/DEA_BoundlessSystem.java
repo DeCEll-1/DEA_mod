@@ -1,19 +1,19 @@
 package data.shipsystems.scripts;
 
-import DEA.helper.render.DEAlib_RendererPlugin;
-import DEA.helper.render.renderClassesFolder.DEAlib_SquareData;
+import VeB.helper.VeBlib_Logger;
+import VeB.helper.VeBlib_Rainbow;
+import VeB.helper.render.VeBlib_RendererPlugin;
+import VeB.helper.render.renderClassesFolder.VeBlib_SquareData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.SoundAPI;
-import com.fs.starfarer.api.SpriteId;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
-import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.impl.combat.EntropyAmplifierStats;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.util.Misc;
+import data.classes.DEA_OpenglWeaponFunctions;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -25,7 +25,7 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
 
     //only player can buff themselves and allies othervise its just like entropy
 
-    private DEAlib_RendererPlugin plugin = null;
+    private VeBlib_RendererPlugin plugin = null;
     private static float EnemyShipTimeMult = 0.3f;
 
     private static float AllyShipTimeMult = 3f;
@@ -42,16 +42,14 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
     private boolean doOnce2hou = true;
     private boolean doOnce = true;
 
+    private VeBlib_Rainbow rainbow = new VeBlib_Rainbow();
 
     public void apply(MutableShipStatsAPI stats, String id, ShipSystemStatsScript.State state, float effectLevel) {
 
         try {
 
-            
-
-
             if (plugin == null) {//2hou nuts
-                plugin = new DEAlib_RendererPlugin();
+                plugin = new VeBlib_RendererPlugin();
                 Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
             }
 
@@ -96,7 +94,7 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
 
 //                Global.getSettings().loadTexture(fileName.toString());
 
-                    DEAlib_SquareData square = new DEAlib_SquareData(
+                    VeBlib_SquareData square = new VeBlib_SquareData(
                             topLeft,
                             topRight,
                             bottomLeft,
@@ -106,7 +104,7 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
                             Global.getSettings().getSprite(fileName.toString())
                     );
 
-                    List<DEAlib_SquareData> squareList = new ArrayList<>();
+                    List<VeBlib_SquareData> squareList = new ArrayList<>();
 
                     squareList.add(square);
 
@@ -142,6 +140,13 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
 
             float maxRangeBonus = 10f;
 
+//            rainbow.advance();//advances the rainbows color
+
+//            DEA_OpenglWeaponFunctions.randomiseColorOfWeaponSlots(ship);
+
+
+//            VeBlib_Logger.log(this.getClass(),Global.getCombatEngine().getPlayerShip().getLocation().toString());
+
 
             if (state == State.OUT) {
                 Global.getCombatEngine().getTimeMult().unmodifyMult(id);
@@ -173,7 +178,9 @@ public class DEA_BoundlessSystem extends BaseShipSystemScript {
                 targetship.getMutableStats().getTimeMult().modifyMult(id, shipTimeMult);
 
                 if (targetship == Global.getCombatEngine().getPlayerShip()) {
-                    Global.getCombatEngine().getTimeMult().modifyMult("id", shipTimeMult);
+                    Global.getCombatEngine().getTimeMult().modifyMult(id, shipTimeMult);
+                } else {
+                    Global.getCombatEngine().getTimeMult().unmodifyMult(id);
                 }
 
 //        }

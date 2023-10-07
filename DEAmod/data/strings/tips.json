@@ -4,6 +4,10 @@
       "freq": 1,
       "tip": "You can change the frequency of tips by adding a json object instead of a string, like so. For example, this tip has a frequency of 0 and will never show up. The default freq value is 1."
     },
+     {
+       "freq": 999999,
+       "tip": "ç ş ğ ü ö ı Letters: ꦄ ꦅ ꦆ ꦇ ꦈ ꦉ ꦊ ꦋ ꦌ ꦍ ꦎ ꦏ ꦐ ꦑ ꦒ ꦓ ꦔ ꦕ ꦖ ꦗ ꦘ ꦙ ꦚ ꦛ ꦜ ꦝ ꦞ ꦟ ꦠ ꦡ ꦢ ꦣ ꦤ ꦥ ꦦ ꦧ ꦨ ꦩ ꦪ ꦫ ꦬ ꦭ ꦮ ꦯ ꦰ ꦱ ꦲ\n\nNumbers: ꧐ ꧑ ꧒ ꧓ ꧔ ꧕ ꧖ ꧗ ꧘ ꧙\n\nSymbols: ꧁ ꧂ ꧃ ꧄ ꧅ ꧆ ꧇ ꧈ ꧉ ꧊ ꧋ ꧌ ꧍ ꧞ ꧟ \n\nCombining : ꦀ ꦁ ꦂ ꦃ ꦳ ꦴ ꦵ ꦶ ꦷ ꦸ ꦹ ꦺ ꦻ ꦼ ꦽ ꦾ ꦿ ꧀"
+     },
     {
       "freq": 1,
       "tip": "[DEA] i need that ziggussy :sob:"
@@ -19,6 +23,10 @@
     {
       "freq": 1,
       "tip": "[DEA] like this mod? try Realistic Warships!"
+    },
+    {
+      "freq": 1,
+      "tip": "[DEA] What3.png"
     },
    # {
       #"freq": 1,

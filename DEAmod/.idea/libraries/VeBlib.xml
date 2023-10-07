@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="DEAlib">
+  <library name="VeBlib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../DEAlib/jars/DEAlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../VeBlib/jars/VeBlib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

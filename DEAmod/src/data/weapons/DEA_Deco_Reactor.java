@@ -1,11 +1,11 @@
 package data.weapons;
 
-import DEA.helper.DEAlib_DamageBaseClass;
-import DEA.helper.DEAlib_EMPArcHelper;
-import DEA.helper.render.DEAlib_RendererPlugin;
-import DEA.helper.render.renderClassesFolder.DEAlib_LineData;
-import DEA.helper.render.renderClassesFolder.DEAlib_LineWWidthData;
-import DEA.helper.render.renderClassesFolder.DEAlib_RingData;
+import VeB.helper.VeBlib_EMPArcHelper;
+import VeB.helper.helperHelperClasses.VeBlib_DamageBaseClass;
+import VeB.helper.render.VeBlib_RendererPlugin;
+import VeB.helper.render.renderClassesFolder.VeBlib_LineData;
+import VeB.helper.render.renderClassesFolder.VeBlib_LineWWidthData;
+import VeB.helper.render.renderClassesFolder.VeBlib_RingData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static DEA.helper.DEAlib_Statics.random;
+import static VeB.helper.VeBlib_Statics.random;
 
 
 public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
@@ -28,7 +28,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     public static Vector2f from;
 
-    public static DEAlib_DamageBaseClass DEA_Penteract_DamageBaseClass = new DEAlib_DamageBaseClass();
+    public static VeBlib_DamageBaseClass DEA_Penteract_DamageBaseClass = new VeBlib_DamageBaseClass();
 
     public boolean runOnce = true;
 
@@ -39,7 +39,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     public IntervalUtil timer = new IntervalUtil(1f, 1f);
 
-    private DEAlib_RendererPlugin plugin = null;
+    private VeBlib_RendererPlugin plugin = null;
 
 
     private float currentAngle = 999;
@@ -48,7 +48,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
         try {
 
             if (plugin == null) {
-                plugin = new DEAlib_RendererPlugin();
+                plugin = new VeBlib_RendererPlugin();
                 Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
             }
 
@@ -60,20 +60,20 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
                 this.shipColor = weapon.getShip().getSpriteAPI().getAverageColor();
             }
 
-            List<DEAlib_LineWWidthData> dealib_lineDataList = new ArrayList<>();
+            List<VeBlib_LineWWidthData> VeBlib_lineDataList = new ArrayList<>();
 
             timer.advance(amount);
             if (!engine.isPaused()) {
                 for (int i = 0; i < 200; i++) {
                     float BeamAngle = (float) random.nextInt(360);
                     from = MathUtils.getPointOnCircumference(weapon.getLocation(), (float) random.nextInt(29), BeamAngle);
-                    dealib_lineDataList = MakeParticle(amount, engine, weapon, from, BeamAngle, dealib_lineDataList);
+                    VeBlib_lineDataList = MakeParticle(amount, engine, weapon, from, BeamAngle, VeBlib_lineDataList);
 
 
 //                weapon.getShip().getShield().setRingColor(dea_helper.DEA_RainbowWithAlpha(120));
 //                weapon.getShip().getShield().setInnerColor(dea_helper.DEA_RainbowWithAlpha(120));
                 }
-                plugin.LineWWidthInPlugin(dealib_lineDataList);
+                plugin.LineWWidthInPlugin(VeBlib_lineDataList);
                 plugin.ChangeRenderLayerInPlugin(CombatEngineLayers.ABOVE_PARTICLES);
 
 
@@ -100,7 +100,7 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
                 if (IsNearSomething) {
 
-                    DEAlib_EMPArcHelper.SpawnDamagingEMPArc(
+                    VeBlib_EMPArcHelper.SpawnDamagingEMPArc(
                             weapon.getShip(),
                             from,
                             THETHING,
@@ -143,27 +143,27 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
 //                currentAngle = enemyAngle;
 
-//                plugin.DEAlib_CircleInPlugin(DEA_DrawEye.DEA_DrawEyeFull(ship.getLocation(), 200f, 26, ship));//unneeded
+//                plugin.VeBlib_CircleInPlugin(DEA_DrawEye.DEA_DrawEyeFull(ship.getLocation(), 200f, 26, ship));//unneeded
 
-//            List<DEAlib_RingData> DEA_Ring = new ArrayList<>();
+//            List<VeBlib_RingData> DEA_Ring = new ArrayList<>();
 //
 //
-//            DEAlib_RingData ring = new DEAlib_RingData(EyeCenter, 30, currentAngle, radius, 4f, new Color(255, 255, 255, 50));
+//            VeBlib_RingData ring = new VeBlib_RingData(EyeCenter, 30, currentAngle, radius, 4f, new Color(255, 255, 255, 50));
 //
 //            DEA_Ring.add(ring);
 //
-//            plugin.DEAlib_Ring(DEA_Ring);
+//            plugin.VeBlib_Ring(DEA_Ring);
 //
-//            List<DEAlib_LineWWidthData> EyeCornea = new ArrayList<>();
+//            List<VeBlib_LineWWidthData> EyeCornea = new ArrayList<>();
 //
-//            EyeCornea.add(new DEAlib_LineWWidthData(
+//            EyeCornea.add(new VeBlib_LineWWidthData(
 //                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle + 180),
 //                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle + 12f + 180),
 //                    4f,
 //                    Color.RED
 //            ));
 //
-//            EyeCornea.add(new DEAlib_LineWWidthData(
+//            EyeCornea.add(new VeBlib_LineWWidthData(
 //                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle - 12f + 180),
 //                    MathUtils.getPointOnCircumference(EyeCenter, radius, currentAngle - 24f + 180),
 //                    4f,
@@ -179,11 +179,11 @@ public class DEA_Deco_Reactor implements EveryFrameWeaponEffectPlugin {
 
     }
 
-    public List<DEAlib_LineWWidthData> MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle, List<DEAlib_LineWWidthData> dealib_lineDataList) {
+    public List<VeBlib_LineWWidthData> MakeParticle(float amount, CombatEngineAPI engine, WeaponAPI weapon, Vector2f from, float BeamAngle, List<VeBlib_LineWWidthData> VeBlib_lineDataList) {
 
-        dealib_lineDataList.add(new DEAlib_LineWWidthData(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), 1f, shipColor));
+        VeBlib_lineDataList.add(new VeBlib_LineWWidthData(from, MathUtils.getPointOnCircumference(from, 10f, BeamAngle - 90f), 1f, shipColor));
 
-        return dealib_lineDataList;
+        return VeBlib_lineDataList;
 //        MagicFakeBeam.spawnFakeBeam(
 //                engine,
 //                from,

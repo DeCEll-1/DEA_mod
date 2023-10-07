@@ -1,14 +1,15 @@
 package data.plugins;
 
-import DEA.helper.DEAlib_Logger;
+import VeB.helper.VeBlib_Logger;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
+
+import java.io.IOException;
 
 public class DEA_Plugin extends BaseModPlugin {
     @Override
     public void onApplicationLoad() {
-        StringBuilder errText = new StringBuilder("    *-*   ");
-        try {
+
 //2hou
             if (Global.getSettings().getBoolean("2houBadApplePlayOnDEA_Boundless")) {
                 for (int i = 0; i < 6573; i++) {
@@ -27,19 +28,18 @@ public class DEA_Plugin extends BaseModPlugin {
 
                     fileName.append(".jpg");
 
-                    Global.getSettings().loadTexture(fileName.toString());
+                    try {
+                        Global.getSettings().loadTexture(fileName.toString());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
 
                 }
 
             }
 
 
-            errText.append("DEA_Logger.DEA_log(DEA_Plugin.class, \"loadedDEA\");");
-            DEAlib_Logger.log(DEA_Plugin.class, "loadedDEA");
-            errText.append("DEA_Logger.DEA_log(DEA_Plugin.class, \"loadedDEA\");    *-*    worked");
-        } catch (Exception ex) {
-            DEAlib_Logger.log(DEA_Plugin.class, "DEA_ERROR" + errText + "\n ERROR MESSAGE: " + ex.getMessage());
-        }
+            VeBlib_Logger.log(DEA_Plugin.class, "loadedDEA");
 
 
     }

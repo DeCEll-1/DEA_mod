@@ -55,6 +55,16 @@
             this.cb_Filled = new System.Windows.Forms.RadioButton();
             this.cb_Lines = new System.Windows.Forms.RadioButton();
             this.cb_DoNotDraw = new System.Windows.Forms.RadioButton();
+            this.pnl_Texture = new System.Windows.Forms.Panel();
+            this.tb_TextureLocationPath = new System.Windows.Forms.TextBox();
+            this.btn_TextureRefresh = new System.Windows.Forms.Button();
+            this.cb_AddColor = new System.Windows.Forms.CheckBox();
+            this.tb_ModRoot = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cb_AddImage = new System.Windows.Forms.CheckBox();
+            this.lbl_SizeLBL = new System.Windows.Forms.Label();
+            this.tb_TextureID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tb_result
@@ -187,13 +197,14 @@
             // 
             // pnl_Color
             // 
-            this.pnl_Color.Location = new System.Drawing.Point(224, 103);
+            this.pnl_Color.Location = new System.Drawing.Point(224, 126);
             this.pnl_Color.Name = "pnl_Color";
-            this.pnl_Color.Size = new System.Drawing.Size(101, 98);
+            this.pnl_Color.Size = new System.Drawing.Size(101, 75);
             this.pnl_Color.TabIndex = 8;
             // 
             // tb_R
             // 
+            this.tb_R.Enabled = false;
             this.tb_R.Location = new System.Drawing.Point(12, 142);
             this.tb_R.MaxLength = 3;
             this.tb_R.Name = "tb_R";
@@ -207,6 +218,7 @@
             // 
             // tb_G
             // 
+            this.tb_G.Enabled = false;
             this.tb_G.Location = new System.Drawing.Point(118, 142);
             this.tb_G.MaxLength = 3;
             this.tb_G.Name = "tb_G";
@@ -237,6 +249,7 @@
             // 
             // tb_B
             // 
+            this.tb_B.Enabled = false;
             this.tb_B.Location = new System.Drawing.Point(12, 181);
             this.tb_B.MaxLength = 3;
             this.tb_B.Name = "tb_B";
@@ -249,6 +262,7 @@
             // 
             // tb_A
             // 
+            this.tb_A.Enabled = false;
             this.tb_A.Location = new System.Drawing.Point(118, 181);
             this.tb_A.MaxLength = 3;
             this.tb_A.Name = "tb_A";
@@ -318,11 +332,119 @@
             this.cb_DoNotDraw.Text = "Do Not Draw";
             this.cb_DoNotDraw.UseVisualStyleBackColor = true;
             // 
+            // pnl_Texture
+            // 
+            this.pnl_Texture.BackgroundImage = global::DEAmod_TriangleStuffCalculator.Properties.Resources.NoTextureSelected;
+            this.pnl_Texture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_Texture.Location = new System.Drawing.Point(329, 268);
+            this.pnl_Texture.Name = "pnl_Texture";
+            this.pnl_Texture.Size = new System.Drawing.Size(210, 210);
+            this.pnl_Texture.TabIndex = 102;
+            // 
+            // tb_TextureLocationPath
+            // 
+            this.tb_TextureLocationPath.Location = new System.Drawing.Point(297, 208);
+            this.tb_TextureLocationPath.Name = "tb_TextureLocationPath";
+            this.tb_TextureLocationPath.Size = new System.Drawing.Size(242, 20);
+            this.tb_TextureLocationPath.TabIndex = 14;
+            this.tb_TextureLocationPath.Text = "Path Relative To Mod Folder, isnt used in weapon";
+            this.tb_TextureLocationPath.Enter += new System.EventHandler(this.deletePlaceHolder);
+            // 
+            // btn_TextureRefresh
+            // 
+            this.btn_TextureRefresh.Location = new System.Drawing.Point(404, 239);
+            this.btn_TextureRefresh.Name = "btn_TextureRefresh";
+            this.btn_TextureRefresh.Size = new System.Drawing.Size(135, 23);
+            this.btn_TextureRefresh.TabIndex = 16;
+            this.btn_TextureRefresh.Text = "Refresh Texture";
+            this.btn_TextureRefresh.UseVisualStyleBackColor = true;
+            this.btn_TextureRefresh.Click += new System.EventHandler(this.btn_TextureRefresh_Click);
+            // 
+            // cb_AddColor
+            // 
+            this.cb_AddColor.AutoSize = true;
+            this.cb_AddColor.Location = new System.Drawing.Point(224, 105);
+            this.cb_AddColor.Name = "cb_AddColor";
+            this.cb_AddColor.Size = new System.Drawing.Size(72, 17);
+            this.cb_AddColor.TabIndex = 7;
+            this.cb_AddColor.Text = "Add Color";
+            this.cb_AddColor.UseVisualStyleBackColor = true;
+            this.cb_AddColor.CheckedChanged += new System.EventHandler(this.cb_AddColor_CheckedChanged);
+            // 
+            // tb_ModRoot
+            // 
+            this.tb_ModRoot.Location = new System.Drawing.Point(227, 25);
+            this.tb_ModRoot.Multiline = true;
+            this.tb_ModRoot.Name = "tb_ModRoot";
+            this.tb_ModRoot.Size = new System.Drawing.Size(316, 36);
+            this.tb_ModRoot.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(224, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 13);
+            this.label12.TabIndex = 106;
+            this.label12.Text = "Mods Root Folder";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(331, 185);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.TabIndex = 107;
+            this.label13.Text = "Image ID";
+            // 
+            // cb_AddImage
+            // 
+            this.cb_AddImage.AutoSize = true;
+            this.cb_AddImage.Checked = true;
+            this.cb_AddImage.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_AddImage.Location = new System.Drawing.Point(329, 243);
+            this.cb_AddImage.Name = "cb_AddImage";
+            this.cb_AddImage.Size = new System.Drawing.Size(77, 17);
+            this.cb_AddImage.TabIndex = 15;
+            this.cb_AddImage.Text = "Add Image";
+            this.cb_AddImage.UseVisualStyleBackColor = true;
+            this.cb_AddImage.CheckedChanged += new System.EventHandler(this.cb_AddImage_CheckedChanged);
+            // 
+            // lbl_SizeLBL
+            // 
+            this.lbl_SizeLBL.AutoSize = true;
+            this.lbl_SizeLBL.Location = new System.Drawing.Point(539, 481);
+            this.lbl_SizeLBL.Name = "lbl_SizeLBL";
+            this.lbl_SizeLBL.Size = new System.Drawing.Size(0, 13);
+            this.lbl_SizeLBL.TabIndex = 108;
+            // 
+            // tb_TextureID
+            // 
+            this.tb_TextureID.Location = new System.Drawing.Point(387, 182);
+            this.tb_TextureID.Name = "tb_TextureID";
+            this.tb_TextureID.Size = new System.Drawing.Size(152, 20);
+            this.tb_TextureID.TabIndex = 14;
+            this.tb_TextureID.Text = "ID of the image in settings.json";
+            this.tb_TextureID.Enter += new System.EventHandler(this.deletePlaceHolder);
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btn_enter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 490);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(555, 490);
+            this.Controls.Add(this.lbl_SizeLBL);
+            this.Controls.Add(this.cb_AddImage);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cb_AddColor);
+            this.Controls.Add(this.btn_TextureRefresh);
+            this.Controls.Add(this.tb_ModRoot);
+            this.Controls.Add(this.tb_TextureID);
+            this.Controls.Add(this.tb_TextureLocationPath);
+            this.Controls.Add(this.pnl_Texture);
             this.Controls.Add(this.cb_DoNotDraw);
             this.Controls.Add(this.cb_Lines);
             this.Controls.Add(this.cb_Filled);
@@ -352,6 +474,7 @@
             this.Controls.Add(this.tb_result);
             this.KeyPreview = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "make triangles";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
@@ -388,6 +511,16 @@
         private System.Windows.Forms.RadioButton cb_Filled;
         private System.Windows.Forms.RadioButton cb_Lines;
         private System.Windows.Forms.RadioButton cb_DoNotDraw;
+        private System.Windows.Forms.Panel pnl_Texture;
+        private System.Windows.Forms.TextBox tb_TextureLocationPath;
+        private System.Windows.Forms.Button btn_TextureRefresh;
+        private System.Windows.Forms.CheckBox cb_AddColor;
+        private System.Windows.Forms.TextBox tb_ModRoot;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox cb_AddImage;
+        private System.Windows.Forms.Label lbl_SizeLBL;
+        private System.Windows.Forms.TextBox tb_TextureID;
     }
 }
 

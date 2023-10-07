@@ -1,9 +1,10 @@
 package data.shipsystems.scripts;
 
-import DEA.helper.*;
-import DEA.helper.render.DEAlib_RendererPlugin;
-import DEA.helper.render.renderClassesFolder.*;
-import DEA.helper.render.renderClassesFolder.DEAlib_RingData;
+import VeB.helper.*;
+import VeB.helper.helperHelperClasses.VeBlib_DamageBaseClass;
+import VeB.helper.render.VeBlib_RendererPlugin;
+import VeB.helper.render.renderClassesFolder.*;
+import VeB.helper.render.renderClassesFolder.VeBlib_RingData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
@@ -33,20 +34,20 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 
 //    private Sphere sphere = null;
 
-    private DEAlib_RendererPlugin plugin = null;
+    private VeBlib_RendererPlugin plugin = null;
 //    private float empArcCount = 1;
 
     private boolean EmpBurst = false;
 
 
-    private static DEAlib_DamageBaseClass DEA_DamageBaseClass_DEA_PenteractSystem = new DEAlib_DamageBaseClass(4000f, 7000f, DamageType.ENERGY);
+    private static VeBlib_DamageBaseClass DEA_DamageBaseClass_DEA_PenteractSystem = new VeBlib_DamageBaseClass(4000f, 7000f, DamageType.ENERGY);
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         try {
 
             if (plugin == null) {
-                plugin = new DEAlib_RendererPlugin();
+                plugin = new VeBlib_RendererPlugin();
                 Global.getCombatEngine().addLayeredRenderingPlugin(plugin);
             }
 
@@ -92,7 +93,7 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
                 plugin.CircleInPlugin(null);
                 plugin.LineWWidthInPlugin(null);
 
-                List<DEAlib_RingData> DEA_Ring = new ArrayList<>();
+                List<VeBlib_RingData> DEA_Ring = new ArrayList<>();
 
                 if (effectLevel >= 1) {
 //                    DEA_MagicFakeBeamHelper.DEA_CirclePenteractEffect(ship.getLocation(), 6f, 0f, ship.getSpriteAPI().getHeight(), shipColor, shipColor, ship);
@@ -101,20 +102,20 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 
                     ship.getExactBounds().update(ship.getLocation(), ship.getFacing());
 
-                    List<DEAlib_SquareData> dealib_boxDataList = new ArrayList<>();
+                    List<VeBlib_SquareData> VeBlib_boxDataList = new ArrayList<>();
 
-                    DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 20f, angle + 0f, ship.getCollisionRadius() * 2, 4f, shipColor));
+                    DEA_Ring.add(new VeBlib_RingData(ship.getLocation(), 20f, angle + 0f, ship.getCollisionRadius() * 2, 4f, shipColor));
 //                    DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 20f, angle + 0f, ship.getSpriteAPI().getHeight(), shipColor);
 
                     for (float i = 0; i < 90; i += 22.5) {
-                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.GetPlusMinusAngle(angle, i), ship.getCollisionRadius() * 2, 4f, shipColor));
+                        DEA_Ring.add(new VeBlib_RingData(ship.getLocation(), 4f, VeBlib_Helper.GetPlusMinusAngle(angle, i), ship.getCollisionRadius() * 2, 4f, shipColor));
 //                        DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 4f, DEA_Helper.DEA_GetPlusMinusAngle(angle, i), ship.getSpriteAPI().getHeight(), shipColor);
                     }
 
-                    DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 20f, angle2 + 0f, (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
+                    DEA_Ring.add(new VeBlib_RingData(ship.getLocation(), 20f, angle2 + 0f, (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
 //                    DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 20f, angle2 + 0f, (float) (ship.getSpriteAPI().getHeight() * 0.72), shipColor);
                     for (int i = 30; i < 91; i += 30) {
-                        DEA_Ring.add(new DEAlib_RingData(ship.getLocation(), 4f, DEAlib_Helper.GetPlusMinusAngle(angle2, i), (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
+                        DEA_Ring.add(new VeBlib_RingData(ship.getLocation(), 4f, VeBlib_Helper.GetPlusMinusAngle(angle2, i), (float) (ship.getCollisionRadius() * 2 * 0.72), 4f, shipColor));
 //                        DEA_RenderHelper.DEA_DrawPolygonWHeightAndCenter(ship.getLocation(), 4f, DEA_Helper.DEA_GetPlusMinusAngle(angle2, i), (float) (ship.getSpriteAPI().getHeight() * 0.72), shipColor);
                     }
 
@@ -122,19 +123,19 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 //                    empArcCount += Global.getCombatEngine().getElapsedInLastFrame();
 
 
-//                    dealib_boxDataList.add(new DEAlib_BoxData(
-//                            DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(ship),
-//                            DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(ship),
-//                            DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(ship),
-//                            DEAlib_BoundsHelper.DEAlib_GetRandomBoundLocation(ship),
+//                    VeBlib_boxDataList.add(new VeBlib_BoxData(
+//                            VeBlib_BoundsHelper.VeBlib_GetRandomBoundLocation(ship),
+//                            VeBlib_BoundsHelper.VeBlib_GetRandomBoundLocation(ship),
+//                            VeBlib_BoundsHelper.VeBlib_GetRandomBoundLocation(ship),
+//                            VeBlib_BoundsHelper.VeBlib_GetRandomBoundLocation(ship),
 //                            shipColor,
 //                            GL_LINE
 //                    ));
 
-                    List<DEAlib_PolygonData> dealib_polygonDataList = new ArrayList<>();
+                    List<VeBlib_PolygonData> VeBlib_polygonDataList = new ArrayList<>();
 
 //                    if (boundList == null) {
-                    boundList = DEAlib_BoundsHelper.GetListOfBoundLocations(ship);
+                    boundList = VeBlib_BoundsHelper.GetListOfBoundLocations(ship);
                     for (int i = 0; i < boundList.size(); i++) {
                         colorList.add(Color.white);
                     }
@@ -147,12 +148,12 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 //                    boundList2.add(new Vector2f(60f, 0f));
 //                    boundList2.add(new Vector2f(60f, 60f));
 
-//                    dealib_polygonDataList.add(new DEAlib_PolygonData(boundList2, colorList, GL_LINE));
+//                    VeBlib_polygonDataList.add(new VeBlib_PolygonData(boundList2, colorList, GL_LINE));
 
 //add constructer to the plugin and put layers in it
                     plugin.ChangeRenderLayerInPlugin(CombatEngineLayers.BELOW_SHIPS_LAYER);
-                    plugin.SquareInPlugin(dealib_boxDataList);
-//                    plugin.DEAlib_PolygonInPlugin(dealib_polygonDataList);
+                    plugin.SquareInPlugin(VeBlib_boxDataList);
+//                    plugin.VeBlib_PolygonInPlugin(VeBlib_polygonDataList);
                     plugin.Ring(DEA_Ring);
 
 
@@ -172,7 +173,7 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
 
                             if (!enemy.getLocation().equals(ship.getLocation())) {
                                 if (enemy instanceof ShipAPI && !((ShipAPI) enemy).isAlly() && ((ShipAPI) enemy).isAlive()) {
-                                    DEAlib_EMPArcHelper.SpawnDamagingEMPArc(
+                                    VeBlib_EMPArcHelper.SpawnDamagingEMPArc(
                                             ship,
                                             ship.getLocation(),
                                             enemy,
@@ -180,8 +181,8 @@ public class DEA_PenteractSystem extends BaseShipSystemScript {
                                             3000f,
                                             "",
                                             4f,
-                                            DEAlib_Statics.TRANSPARENT,
-                                            DEAlib_Statics.TRANSPARENT
+                                            VeBlib_Statics.TRANSPARENT,
+                                            VeBlib_Statics.TRANSPARENT
                                     );
                                 }
                             }

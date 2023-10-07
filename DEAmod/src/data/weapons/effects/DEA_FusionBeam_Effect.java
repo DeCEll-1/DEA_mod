@@ -1,22 +1,22 @@
 package data.weapons.effects;
 
-import DEA.helper.DEAlib_BoundsHelper;
-import DEA.helper.DEAlib_EMPArcHelper;
+import VeB.helper.VeBlib_BoundsHelper;
+import VeB.helper.VeBlib_EMPArcHelper;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
-import DEA.helper.DEAlib_DamageBaseClass;
+import VeB.helper.helperHelperClasses.VeBlib_DamageBaseClass;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-import static DEA.helper.DEAlib_EMPArcHelper.*;
+import static VeB.helper.VeBlib_EMPArcHelper.*;
 
 
 public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin implements BeamEffectPlugin {
 
-    public static DEAlib_DamageBaseClass DEA_DamageBaseClass_DEA_Hopelesness = new DEAlib_DamageBaseClass();
+    public static VeBlib_DamageBaseClass DEA_DamageBaseClass_DEA_Hopelesness = new VeBlib_DamageBaseClass();
     public IntervalUtil timer = new IntervalUtil(1.9f, 1.9f);
 
     public boolean doOnce = true;
@@ -84,14 +84,14 @@ public class DEA_FusionBeam_Effect extends BaseCombatLayeredRenderingPlugin impl
 
 //            for (int i = 0; i < 20; i++) {
 
-            DEAlib_EMPArcHelper.SpawnEMPArcsBetweenShipsBounds(ship, 4f, shipColor, shipColor);
+            VeBlib_EMPArcHelper.SpawnEMPArcsBetweenShipsBounds(ship, 4f, shipColor, shipColor);
 
-//            for (Vector2f location : DEAlib_BoundsHelper.DEAlib_GetListOfBoundLocations(ship)) {
+//            for (Vector2f location : VeBlib_BoundsHelper.VeBlib_GetListOfBoundLocations(ship)) {
 //
 //                DEA_SpawnEMPArcVisual(location, beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
 //            }
 
-            SpawnEMPArcVisual(DEAlib_BoundsHelper.GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
+            SpawnEMPArcVisual(VeBlib_BoundsHelper.GetRandomBoundLocation(this.ship), beam.getWeapon().getLocation(), chargeUp * 15f, this.shipColor, this.shipColor);
 
             Global.getCombatEngine().maintainStatusForPlayerShip(
                     ship.getId(),

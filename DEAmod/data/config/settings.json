@@ -10,6 +10,13 @@
     "combatNuts": {
       "observantEye1": "graphics/textures/TheObservant1.png",
       "observantEye2": "graphics/textures/TheObservant2.png"
+    },
+    "openGL": {
+      "triangleTextTexture": "graphics/textures/TriangleTextureTest.png",
+      "PixelGrid": "graphics/textures/PixelGrid.png",
+      "PixelGrid2": "graphics/textures/PixelGrid2.png",
+      "TriangleArmorTest1": "graphics/textures/TriangleArmorTest1.png",
+      "TriangleArmorTest2": "graphics/textures/TriangleArmorTest2.png"
     }
   }
 }

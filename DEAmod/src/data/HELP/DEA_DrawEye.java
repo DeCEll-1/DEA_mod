@@ -1,9 +1,9 @@
 package data.HELP;
 
-import DEA.helper.render.renderClassesFolder.DEAlib_CircleData;
-import DEA.helper.render.renderClassesFolder.DEAlib_RingData;
-import DEA.helper.render.renderClassesFolder.DEAlib_RingData;
-import DEA.helper.render.renderClassesFolder.DEAlib_SphereData;
+import VeB.helper.render.renderClassesFolder.VeBlib_CircleData;
+import VeB.helper.render.renderClassesFolder.VeBlib_RingData;
+import VeB.helper.render.renderClassesFolder.VeBlib_RingData;
+import VeB.helper.render.renderClassesFolder.VeBlib_SphereData;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ViewportAPI;
@@ -28,11 +28,11 @@ public class DEA_DrawEye {
 //
 //            SpriteAPI texture = Global.getSettings().getSprite("combatNuts", "observantEye");
 //
-//            List<DEAlib_SphereData> sphereList = new ArrayList<>();
+//            List<VeBlib_SphereData> sphereList = new ArrayList<>();
 //
-//            sphereList.add(new DEAlib_SphereData(radius, stacks, slices, sphere, center, texture));
+//            sphereList.add(new VeBlib_SphereData(radius, stacks, slices, sphere, center, texture));
 
-    public static List<DEAlib_CircleData> DEA_DrawEyeFull(Vector2f center, float radius, int segments, ShipAPI ship) {
+    public static List<VeBlib_CircleData> DEA_DrawEyeFull(Vector2f center, float radius, int segments, ShipAPI ship) {
         try {
 
 
@@ -41,11 +41,11 @@ public class DEA_DrawEye {
 //
 
 
-            List<DEAlib_CircleData> circleList = new ArrayList();
+            List<VeBlib_CircleData> circleList = new ArrayList();
 
 
-//            DEAlib_CircleData around = new DEAlib_CircleData(center, radius, segments, true, new Color(255, 255, 255, 100));//otuer eye
-            DEAlib_CircleData small = new DEAlib_CircleData(MathUtils.getPointOnCircumference(center, (float) (radius * 0.4), VectorUtils.getAngle(ship.getLocation(), ship.getShipTarget().getLocation())), (float) (radius * 0.4), segments, true, Color.black);
+//            VeBlib_CircleData around = new VeBlib_CircleData(center, radius, segments, true, new Color(255, 255, 255, 100));//otuer eye
+            VeBlib_CircleData small = new VeBlib_CircleData(MathUtils.getPointOnCircumference(center, (float) (radius * 0.4), VectorUtils.getAngle(ship.getLocation(), ship.getShipTarget().getLocation())), (float) (radius * 0.4), segments, true, Color.black);
 
 
 //            circleList.add(around);

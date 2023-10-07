@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -21,6 +22,15 @@ namespace DEAmod_TriangleStuffCalculator
 
 
             InitializeComponent();
+            updatePanel();
+        }
+
+        public void updatePanel()
+        {
+            pnl_Color.BackColor = Color.FromArgb(Convert.ToInt32(tb_A.Text),//updates the panel
+                                                        Convert.ToInt32(tb_R.Text),
+                                                        Convert.ToInt32(tb_G.Text),
+                                                        Convert.ToInt32(tb_B.Text));
         }
 
 
@@ -93,7 +103,7 @@ namespace DEAmod_TriangleStuffCalculator
             }
             catch { }
 
-            String DrawType="";
+            String DrawType = "";
 
             if (cb_Filled.Checked)
             {
@@ -115,22 +125,51 @@ namespace DEAmod_TriangleStuffCalculator
 
             //tb_result.Text = $"{{\r\n      \"id\": \"CustomTriangleWeapon__{Guid.NewGuid().ToString().ToLower()}__R{color.R}__G{color.G}__B{color.B}__A{color.A}\",\r\n      \"size\": \"MEDIUM\",\r\n      \"type\": \"DECORATIVE\",\r\n      \"mount\": \"HIDDEN\",\r\n      \"arc\": {ABDistance},\r\n      \"angle\": {angle},\r\n      \"locations\": [{pointB.x}, {pointB.y}],\r\n      \"renderOrderMod\": {BCDistance}\r\n    }},";
 
-            if (color.A.ToString("X").Length == 2)
-            {
-                //if hex of alpha is less than 2 characters lenght
-                tb_result.Text = $"{{\r\n      \"id\": \"CustomTriangleWeapon__{Guid.NewGuid().ToString().ToLower()}__{ColorTranslator.ToHtml(color) + color.A.ToString("X")}\",\r\n      \"size\": \"MEDIUM\",\r\n      \"type\": \"DECORATIVE\",\r\n      \"mount\": \"{DrawType}\",\r\n      \"arc\": {ABDistance},\r\n      \"angle\": {angle},\r\n      \"locations\": [{pointB.x}, {pointB.y}],\r\n      \"renderOrderMod\": {BCDistance}\r\n    }},";
-            }
-            else
-            {
-                //if hex of alpha is more than 1 character lenght
-                tb_result.Text = $"{{\r\n      \"id\": \"CustomTriangleWeapon__{Guid.NewGuid().ToString().ToLower()}__{ColorTranslator.ToHtml(color) + "0" + color.A.ToString("X")}\",\r\n      \"size\": \"MEDIUM\",\r\n      \"type\": \"DECORATIVE\",\r\n      \"mount\": \"{DrawType}\",\r\n      \"arc\": {ABDistance},\r\n      \"angle\": {angle},\r\n      \"locations\": [{pointB.x}, {pointB.y}],\r\n      \"renderOrderMod\": {BCDistance}\r\n    }},";
-            }
+
+            tb_result.Text = $"{{\r\n      \"id\": \"CustomTriangleWeapon{buildID()}\",\r\n      \"size\": \"MEDIUM\",\r\n      \"type\": \"DECORATIVE\",\r\n      \"mount\": \"{DrawType}\",\r\n      \"arc\": {ABDistance},\r\n      \"angle\": {angle},\r\n      \"locations\": [{pointB.x}, {pointB.y}],\r\n      \"renderOrderMod\": {BCDistance}\r\n    }},";
 
 
 
 
 
         }
+
+        private string buildID()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("__");//seperating
+
+            sb.Append(Guid.NewGuid().ToString().ToLower());//sets the id
+
+            if (cb_AddColor.Checked)
+            {
+                if (color.A.ToString("X").Length < 2)
+                {
+                    sb.Append(ColorTranslator.ToHtml(color) + "0" + color.A.ToString("X"));
+                }
+                else
+                {
+                    sb.Append(ColorTranslator.ToHtml(color) + color.A.ToString("X"));
+                }
+            }
+
+            if (cb_AddImage.Checked)
+            {
+                sb.Append('$');//start identifier
+
+                sb.Append(tb_TextureID.Text);//the texture that the game will use
+
+                sb.Append('$');//end identifier
+            }
+
+
+
+            return sb.ToString();
+        }
+
+        #region keyChecks
+
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -181,10 +220,7 @@ namespace DEAmod_TriangleStuffCalculator
                         e.Handled = true;
 
                     }
-                    pnl_Color.BackColor = Color.FromArgb(Convert.ToInt32(tb_A.Text),//updates the panel
-                                                        Convert.ToInt32(tb_R.Text),
-                                                        Convert.ToInt32(tb_G.Text),
-                                                        Convert.ToInt32(tb_B.Text));
+                    updatePanel();
                 }
 
 
@@ -193,14 +229,12 @@ namespace DEAmod_TriangleStuffCalculator
             catch { }
         }
 
+
         private void btn_enter_Enter(object sender, EventArgs e)
         {
             try
             {
-                pnl_Color.BackColor = Color.FromArgb(Convert.ToInt32(tb_A.Text),//updates the panel
-                                                        Convert.ToInt32(tb_R.Text),
-                                                        Convert.ToInt32(tb_G.Text),
-                                                        Convert.ToInt32(tb_B.Text));
+                updatePanel();
             }
             catch { }
         }
@@ -209,12 +243,63 @@ namespace DEAmod_TriangleStuffCalculator
         {
             try
             {
-                pnl_Color.BackColor = Color.FromArgb(Convert.ToInt32(tb_A.Text),//updates the panel
-                                                        Convert.ToInt32(tb_R.Text),
-                                                        Convert.ToInt32(tb_G.Text),
-                                                        Convert.ToInt32(tb_B.Text));
+                updatePanel();
             }
             catch { }
+        }
+
+        #endregion
+
+        private void deletePlaceHolder(object sender, EventArgs e)
+        {
+            (sender as TextBox).Text = "";
+        }
+
+        private void btn_TextureRefresh_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                pnl_Texture.BackgroundImage = Image.FromFile(tb_ModRoot.Text + tb_TextureLocationPath.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("File Not Found:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cb_AddImage_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cb_AddImage.Checked)
+            {
+                tb_TextureLocationPath.Enabled = true;
+            }
+            else
+            {
+                tb_TextureLocationPath.Enabled = false;
+            }
+
+        }
+
+        private void cb_AddColor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_AddColor.Checked)
+            {
+                tb_R.Enabled = true;
+                tb_G.Enabled = true;
+                tb_B.Enabled = true;
+                tb_A.Enabled = true;
+            }
+            else
+            {
+                tb_R.Enabled = false;
+                tb_G.Enabled = false;
+                tb_B.Enabled = false;
+                tb_A.Enabled = false;
+            }
         }
     }
 }
